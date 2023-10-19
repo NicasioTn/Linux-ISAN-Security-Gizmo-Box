@@ -223,9 +223,37 @@ class PasswordEvaluation(QDialog):
 
         # check password not contains a-z, A-Z, 0-9, !@#$%^&*()_+=- 
         if password not in valid_input:
-            self.lineEdit_password.setStyleSheet("border: 5px solid red;")
+            self.lineEdit_password.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
         else:
-            self.lineEdit_password.setStyleSheet("border: 1px solid black;")
+            self.lineEdit_password.setStyleSheet('''QLineEdit {
+  border: 1px solid gray;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
         return valid_input
 
     def check_password(self):
