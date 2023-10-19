@@ -245,19 +245,24 @@ class Main(QMainWindow):
         self.lineEdit_virusTotalAPISettings.setText(virustotal_api_key)
     
     def saveSetting(self):
-        self.btn_saveSettings.setText('Saved')
+        self.btn_saveSettings.setText('Saved!')
         MessageDigest.saveAPIKey(self, self.lineEdit_LineAPISettings.text())
         MalwareScanning.saveAPIKey(self, self.lineEdit_virusTotalAPISettings.text())
 
     def removeline_api_key(self):
         self.lineEdit_LineAPISettings.setText('')
-        self.btn_removeLineAPISettings.setText('Removed')
+        self.btn_removeLineAPISettings.setText('Removed!')
         MessageDigest.saveAPIKey(self, '')
     
     def removevirustotal_api_key(self):
         self.lineEdit_virusTotalAPISettings.setText('')
-        self.btn_removeVirusTotalAPISettings.setText('Removed')
+        self.btn_removeVirusTotalAPISettings.setText('Removed!')
         MalwareScanning.saveAPIKey(self, '')
+    
+    def update_image(self, pixmap):
+        self.image_analysis.setPixmap(pixmap)
+        self.image_analysis.setScaledContents(True)
+        self.image_analysis.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
 # Run the application
 if __name__ == "__main__":
