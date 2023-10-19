@@ -1,4 +1,4 @@
-# <img src="https://user-images.githubusercontent.com/55986701/249410092-db9276da-6a8d-4a29-ab05-fc24e58b9941.gif" width="40"/> ISAN Security Gizmo Box 
+# <img src="https://user-images.githubusercontent.com/55986701/249410092-db9276da-6a8d-4a29-ab05-fc24e58b9941.gif" width="40"/> ISAN Security Gizmo Box for Linux 
 <div id="header" align="center">
   <img src="https://user-images.githubusercontent.com/55986701/275765601-6d3bbaca-9154-405f-9474-bf5aacc9c8ce.png" width="700"/>
 </div>
