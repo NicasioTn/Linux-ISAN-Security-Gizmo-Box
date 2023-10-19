@@ -142,7 +142,10 @@ class Main(QMainWindow):
         ### --------------------- Vulnerability -------------------------------
         self.progressBar_vulnerScan.setValue(0)
         self.progressBar_vulnerScan.setVisible(False)
-        self.textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))
+        try:
+            self.textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))
+        except:
+            print('Error: textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))')
         # Event Button Page Vulnerability
         self.btn_scanVulner.clicked.connect(lambda: VulnerabilityScanning.prepareCommand(self))
         self.btn_clearVulner.clicked.connect(lambda: VulnerabilityScanning.clear(self))
