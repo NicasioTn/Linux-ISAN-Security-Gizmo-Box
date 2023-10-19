@@ -23,7 +23,7 @@ class MessageDigest(QDialog):
     def LoadAPIKey(self):
         # Fetch API Key from config file
         config = configparser.ConfigParser()
-        configFilePath = '/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/init.conf'
+        configFilePath = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/init.conf'
         config.read(configFilePath)
         if 'LineNotify' in config:
             line_api_key = config.get('LineNotify', 'line_api_key')
@@ -38,7 +38,7 @@ class MessageDigest(QDialog):
 
         # save api key to file init.conf
         config = configparser.ConfigParser()
-        configFilePath = '/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/init.conf'
+        configFilePath = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/init.conf'
         config.read(configFilePath)
         if 'LineNotify' in config:
             config.set('LineNotify', 'line_api_key', str(line_api_key))
@@ -81,7 +81,7 @@ class MessageDigest(QDialog):
         qr.add_data(hash)
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
-        img.save("/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png")
+        img.save("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png")
         print("QR Code Generated")
         return img
         
@@ -91,7 +91,7 @@ class MessageDigest(QDialog):
             self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid red;")
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
             return
-        imagePath = "/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png"
+        imagePath = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png"
         pixmap = QPixmap(imagePath)
         pixmap = pixmap.scaledToWidth(200)
         pixmap = pixmap.scaledToHeight(200)
@@ -472,7 +472,7 @@ class MessageDigest(QDialog):
         token = self.lineEdit_tokenMSDigest.text()
         try:
             if token != '':
-                getQR = "/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png"
+                getQR = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png"
                 url = "https://notify-api.line.me/api/notify"
 
                 headers = {"Authorization": "Bearer " + token}

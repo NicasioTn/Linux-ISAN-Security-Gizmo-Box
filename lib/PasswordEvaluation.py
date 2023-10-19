@@ -35,7 +35,7 @@ class PasswordEvaluation(QDialog):
     
     def LoadWordlist(self):
         # Load the list of weak passwords
-        with open('/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/nordpass_wordlist.json', 'r') as openfile:
+        with open('/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/nordpass_wordlist.json', 'r') as openfile:
             json_object = json.load(openfile)
         
         for item in json_object:
@@ -158,7 +158,7 @@ class PasswordEvaluation(QDialog):
                 self.label_outputPasswordStrength.setStyleSheet("color: rgba(15,152,72,255);"
             "background-color: rgb(237, 236, 237);"
             "border-radius: 20px;")
-                self.progressBar_pwdStrength.setValue(80)
+                self.progressBar_pwdStrength.setValue(100)
                 self.progressBar_pwdStrength.setStyleSheet('''QProgressBar
                                                         {
                                                             border: solid;
@@ -415,6 +415,7 @@ class PasswordAttack(QDialog):
         super().__init__()
 
     def init(self):
+        self.btn_start_attack.setEnabled(False)
         self.lineEdit_passwordDict.setEchoMode(QLineEdit.EchoMode.Password)
 
     def show_hide_password(self):
@@ -436,6 +437,8 @@ class PasswordAttack(QDialog):
         self.textEdit_result_hashcat.clear()
         self.dropdown_modeAttack.setCurrentIndex(0)
         self.dropdown_wordLists.setCurrentIndex(0)
+        self.dropdown_wordLists.setEnabled(True)
+        self.btn_start_attack.setEnabled(False)
 
     def open_file_wordlist(self):
         filepath, _ = QFileDialog.getOpenFileName(
@@ -459,6 +462,20 @@ class PasswordAttack(QDialog):
 
                 return path
             
+    def check_wordlist(self):
+        default_wordlist = ["rockyou.txt", "crackstation.txt"]
+        wordlist = self.lineEdit_inputFileDict.text()
+        
+        if wordlist == '':
+            self.dropdown_wordLists.setCurrentIndex(0)
+            self.btn_start_attack.setEnabled(False)
+        else:
+            self.btn_start_attack.setEnabled(True)
+            if wordlist not in default_wordlist:
+                self.dropdown_wordLists.setEnabled(False)
+                
+
+        
     def select_wordlists(self):
         # select wordlists
         wordlist = self.dropdown_wordLists.currentText()
@@ -469,7 +486,7 @@ class PasswordAttack(QDialog):
             return
         
         # get path of wordlist
-        path = Path(f"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/Wordlists/{wordlist}")
+        path = Path(f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Wordlists/{wordlist}")
         print("path of wordlist: ", path)
 
         # check if wordlist exists
@@ -483,7 +500,7 @@ class PasswordAttack(QDialog):
         return path
     
     def show_loadding(self):
-        self.movie = QMovie("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/images/password-attack.gif")
+        self.movie = QMovie("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/images/password-attack.gif")
         self.movie.setCacheMode(QMovie.CacheMode.CacheAll)
         self.movie.setSpeed(100)
         self.label_loadding.setMovie(self.movie)
@@ -510,6 +527,9 @@ class PasswordAttack(QDialog):
         runner = HashcatRunner()
         runner.finished.connect(lambda: PasswordAttack.on_finished(self))
         runner.update_text.connect(lambda text: PasswordAttack.on_update_text(self, text))
+
+        self.btn_start_attack.setEnabled(False)
+        PasswordAttack.show_loadding(self)
         
         password = self.lineEdit_passwordDict.text()
         password_hash = hashlib.md5(password.encode()).hexdigest()
@@ -535,17 +555,35 @@ class HashcatRunner(QObject):
         super().__init__()
 
     def run_hashcat(self, mode, wordlist, hash, password):
-        wordlist= f"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/Wordlists/rockyou.txt"
-        hashcat_exe = f"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/Tools/hashcat-6.2.5/hashcat.exe"
+        
+        if mode == 1:
+            # Combinator mode cannot use crackstation.txt
+            if wordlist.name == "crackstation.txt":
+                self.update_text.emit(f"Error: Combinator mode cannot use crackstation.txt")
+                return
+        elif mode == 6 or mode == 7:
+            # Skipping mode cannot use crackstation.txt
+            if wordlist.name == "crackstation.txt":
+                self.update_text.emit(f"Error: Skipping mode cannot use crackstation.txt")
+                return
+        else:
+            # Straight forward mode can use any wordlist
+            pass
+
+        hashcat_exe = "hashcat"
 
         if mode == "0": # Straight forward
-            command = f"{hashcat_exe} -d 2 -m 0 -a {mode} {hash} {wordlist}" 
+            command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} | grep "{password}"'
+            
         elif mode == "1": # Combination
-            command = f"{hashcat_exe} -d 2 -m 0 -a {mode} {hash} {wordlist} {wordlist}"
+            command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} {wordlist} | grep "{password}"'
+            
         elif mode == "6": # Skipping 1
-            command = f"{hashcat_exe} -d 2 -m 0 -a {mode} {hash} {wordlist} ?d?d?d?d"
+            command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} ?d?d?d?d | grep "{password}"'
+        
         elif mode == "7": # Skipping 2
-            command = f"{hashcat_exe} -d 2 -m 0 -a {mode} {hash} ?d?d?d?d {wordlist}"
+            command = f'{hashcat_exe} -m 0 -a {mode} {hash} ?d?d?d?d {wordlist} | grep "{password}"'
+            
         else:
             self.update_text.emit(f"No mode selected")
             return
@@ -566,15 +604,37 @@ class HashcatRunner(QObject):
                 # Process the output here
                 if password in line:
                     # Password found, do something
-                    self.update_text.emit(f"Password found: {password}")
+                    self.update_text.emit(f"Password found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: cracked\n")
                     break
             process.communicate()
 
             # Check if the process was successful or not
             if process.returncode == 0:
+                #redirect password to history_of_cracked.txt
+                try:
+                    with open("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/history_of_cracked.txt", "a") as file:
+                        file.write(f"Password: {password}\n")
+                except Exception as e:
+                    #self.update_text.emit(f"Error: {str(e)}")
+                    print(f"Error: {str(e)}")
+                    
                 self.finished.emit()
             else:
-                self.update_text.emit(f"Error: Hashcat process exited with code {process.returncode}")
+                #self.update_text.emit(f"Error: Hashcat process exited with code {process.returncode}")
+                #check if password is in the list of history_of_cracked.txt
+                try:
+                    with open("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/history_of_cracked.txt", "r") as file:
+                        for line in file:
+                            if password in line:
+                                # show password found & value that we need
+                                self.update_text.emit(f"Password found: {password}\n")
+                                break
+                            else:
+                                self.update_text.emit(f"Password not found")
+                                break
+                except Exception as e:
+                    #self.update_text.emit(f"Error: {str(e)}")
+                    print(f"Error: {str(e)}")
             
             if process.returncode == 255:
                 # Additional debug output

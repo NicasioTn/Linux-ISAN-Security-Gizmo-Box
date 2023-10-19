@@ -33,7 +33,7 @@ class HTTPSTesting(QDialog):
     def createReport(self):
         # Create a PDF canvas
         current_time = datetime.now()
-        file_name = f"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
+        file_name = f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
         self.btn_file_email_https.setText(file_name.split('/')[-1])
         target = self.lineEdit_https.text()
 
@@ -54,7 +54,7 @@ class HTTPSTesting(QDialog):
         c.drawString(72, A4[1] - 36, header_text)
 
         # Logo and main title
-        image_path = '/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/images/report_logo.png'
+        image_path = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/images/report_logo.png'
         img = ImageReader(image_path)
         img_width, img_height = 250, 200
         img_x = (A4[0] - img_width) / 2
@@ -163,7 +163,7 @@ class HTTPSTesting(QDialog):
         to_receiver_email = self.lineEdit_to_email_https.text()
         subject_receiver = self.lineEdit_subject_email_https.text()
         body = self.textEdit_body_email_https.toPlainText()
-        file = "/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
+        file = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
         
         SendEmail.sending(SendEmail, to_receiver_email, subject_receiver, body, file)
     
@@ -172,13 +172,13 @@ class HTTPSTesting(QDialog):
         import fitz
 
         # Path to PDF file
-        pdf_file = r"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
+        pdf_file = r"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
 
         # Open PDF file
         pdf_doc = fitz.open(pdf_file)
 
         # Output directory
-        output_dir = r"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/ImagesfromPDF/"  # Corrected path
+        output_dir = r"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/"  # Corrected path
 
         # Iterate through pages and convert to PNG
         for page_number, page in enumerate(pdf_doc):
@@ -189,7 +189,7 @@ class HTTPSTesting(QDialog):
         # Close PDF file
         pdf_doc.close()
 
-        self.label_Report_https.setPixmap(QtGui.QPixmap("/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_0.png"))
+        self.label_Report_https.setPixmap(QtGui.QPixmap("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_0.png"))
         self.label_countPageReport_https.setText("0")
 
     def set_pdf_viewer(self, step):
@@ -206,4 +206,4 @@ class HTTPSTesting(QDialog):
             number = 0
 
         self.label_countPageReport_https.setText(str(number))
-        self.label_Report_https.setPixmap(QtGui.QPixmap(f"/home/kali/Desktop/ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_{number}.png"))
+        self.label_Report_https.setPixmap(QtGui.QPixmap(f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_{number}.png"))

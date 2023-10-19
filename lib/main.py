@@ -16,17 +16,17 @@ class Main(QMainWindow):
     
     def __init__(self):
         super(Main, self).__init__()
-        loadUi("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/ui/mainWindow.ui", self)
+        loadUi("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/ui/mainWindow.ui", self)
          
         # initialize Icon
         self.setWindowTitle("ISAN Security Gizmo Box v1.0")
-        self.setWindowIcon(QIcon("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png"))
-        self.hide_icon = QIcon("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/icon_closedeye.png")
-        self.unhide_icon = QIcon("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/icon_openeye.png")
-        self.warning_icon = QIcon("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/warning-red.png")
-        self.check_icon = QIcon("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/Checked.png")
-        self.label_logo = QPixmap("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png")
-        self.image_main = QPixmap("/home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/images/main.png")
+        self.setWindowIcon(QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png"))
+        self.hide_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_closedeye.png")
+        self.unhide_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_openeye.png")
+        self.warning_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/warning-red.png")
+        self.check_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/Checked.png")
+        self.label_logo = QPixmap("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png")
+        self.image_main = QPixmap("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/images/main.png")
 
         # Event Back Button
         self.btn_backAdvancedUser.clicked.connect(self.openHomePage)
@@ -112,6 +112,7 @@ class Main(QMainWindow):
         self.btn_showPasswordDict.clicked.connect(lambda: PasswordAttack.show_hide_password(self))
         self.dropdown_wordLists.activated.connect(lambda: PasswordAttack.select_wordlists(self))
         self.btn_start_attack.clicked.connect(lambda: PasswordAttack.start_attack(self))
+        self.lineEdit_inputFileDict.textChanged.connect(lambda: PasswordAttack.check_wordlist(self))
         PasswordAttack.show_loadding(self)
 
         ### --------------------- Message Digest ------------------------------
