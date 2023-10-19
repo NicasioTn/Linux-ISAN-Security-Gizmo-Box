@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version= 1.0
+Icon= /home/kali/Desktop/ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png
+Name= GizmoBox
+Exec=python3 /home/kali/Desktop/ISAN-Security-Gizmo-Box/lib/main.py
+Terminal=true
+Type=Application
