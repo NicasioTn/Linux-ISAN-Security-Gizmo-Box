@@ -60,7 +60,21 @@ class MessageDigest(QDialog):
         self.btn_infoToken.setVisible(False)
         self.lineEdit_tokenMSDigest.setText('')
         self.lineEdit_outputTextMSDigest.setText('')
-        self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid black;")
+        self.lineEdit_outputTextMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid black;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
         self.lineEdit_outputTextMSDigest.setPlaceholderText('')
         self.label_type.setText('Type')
         self.btn_saveQR.setText('SAVE')
@@ -69,7 +83,21 @@ class MessageDigest(QDialog):
     def qrCodeGenerator(self, hash):
         if self.lineEdit_outputTextMSDigest == '': # check current text output is empty 
             print("Error: QR-Code is Not Generated")
-            self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid red;")
+            self.lineEdit_outputTextMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
             return
         # Generate QR Code
@@ -88,7 +116,21 @@ class MessageDigest(QDialog):
     def ShowImage_QR(self):
         if self.lineEdit_outputTextMSDigest.text() == '':
             print("Error: QR-Code is Not Generated")
-            self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid red;")
+            self.lineEdit_outputTextMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
             return
         imagePath = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/MessageDigest-QRCode.png"
@@ -464,7 +506,21 @@ class MessageDigest(QDialog):
     def processLineKey(self):
         if self.lineEdit_MSdigest.text() == '':
             print("Data to send Empty")
-            self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid red;")
+            self.lineEdit_outputTextMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
             return 
         type = self.label_type.text()
@@ -485,21 +541,105 @@ class MessageDigest(QDialog):
                 if response.status_code == 200:
                     MessageDigest.saveAPIKey(self, self.lineEdit_LineAPISettings.text()) # save api key to file init.conf
                     print("Image sent successfully!")
-                    self.lineEdit_tokenMSDigest.setStyleSheet("border: 1px solid green;")
+                    self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid green;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
                 elif response.status_code == 400:
                     print("Bad request!")
-                    self.lineEdit_tokenMSDigest.setStyleSheet("border: 1px solid red;")
+                    self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
                 elif response.status_code == 401:
                     print("Invalid access token!")
-                    self.lineEdit_tokenMSDigest.setStyleSheet("border: 1px solid orange;")
+                    self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid Orange;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
                 elif response.status_code == 500:
                     print("Server error!")
-                    self.lineEdit_tokenMSDigest.setStyleSheet("border: 1px solid yellow;")
+                    self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid yellow;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
                 else:
                     print("Process over time.")
-                    self.lineEdit_tokenMSDigest.setStyleSheet("border: 1px solid grey;")
+                    self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid gray;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
             else:
-                self.lineEdit_tokenMSDigest.setStyleSheet("border: 1px solid red;")
+                self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
         except UnicodeEncodeError as e:
             print("Cannot send message to LINE")
             
@@ -508,9 +648,37 @@ class MessageDigest(QDialog):
         # copy to clipboard
         if clipboard == '':
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
-            self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid red;")
+            self.lineEdit_outputTextMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
         else:
-            self.lineEdit_outputTextMSDigest.setStyleSheet("border: 1px solid green;")
+            self.lineEdit_outputTextMSDigest.setStyleSheet('''QLineEdit {
+  border: 1px solid green;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
             self.btn_copy.setText("Copied!")
             pyperclip.copy(clipboard)
     
