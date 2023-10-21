@@ -3645,7 +3645,7 @@ QPushButton:hover {
                <string notr="true">color: rgb(38, 50, 56);</string>
               </property>
               <property name="text">
-               <string>DICTIONATY ATTACK</string>
+               <string>PASSWORD ATTACK</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -4136,7 +4136,25 @@ QPushButton:hover {
              <layout class="QHBoxLayout" name="horizontalLayout_38">
               <item>
                <widget class="QWidget" name="widget_20" native="true">
-                <layout class="QHBoxLayout" name="horizontalLayout_47">
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <widget class="QLabel" name="label_focus_output">
+                   <property name="font">
+                    <font>
+                     <pointsize>18</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: black;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
                  <item>
                   <widget class="QTextEdit" name="textEdit_result_hashcat">
                    <property name="sizePolicy">

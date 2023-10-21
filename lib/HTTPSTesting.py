@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import QDialog
 from SendEmail import *
 import PyQt6.QtGui as QtGui
 
+import subprocess
 import datetime
 
 from reportlab.lib.pagesizes import A4
@@ -15,21 +16,135 @@ from reportlab.lib.utils import ImageReader
 
 class HTTPSTesting(QDialog):
 
+    target = ""
     def __init__(self):
         #super(HTTPSTesting, self).__init__()
         super().__init__()
 
     def clear(self):
         self.lineEdit_https.setText('')
-
-    def scanHTTPS(self):
-        self.lineEdit_https.text()
-        print("HSTS Testing")
-
+        self.btn_scanHttps.setEnabled(True)
+        HTTPSTesting.label_clear(self)
+    
     def checkHTTPS(self):
         text = self.lineEdit_https.text()
-        print(text)
+        target = HTTPSTesting.validate_input(self, text)
+        HTTPSTesting.target = target
+            
+    def scanHTTPS(self):
+        HTTPSTesting.label_clear(self)
+        target = HTTPSTesting.target
+        print("Starting Testing " + target)
+        self.btn_scanHttps.setEnabled(False)
+        self.btn_createReportHttps.setEnabled(False)
+
+        testssl = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testssl.sh/testssl.sh" 
+
+
+        vulnerability = subprocess.Popen([testssl, '-p', target], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, error = vulnerability.communicate()
+        output = output.decode('utf-8')
+        error = error.decode('utf-8')
+        for line in output.split('\n'):
+            line = line.strip()
+            if line.startswith('Testing protocols via sockets'):
+                line = line.split(' ')
+                if line[4] == 'SSLv2':
+                    self.label_ResultSSLv2Https.setText('Yes')
+                else:
+                    self.label_ResultSSLv2Https.setText('No')
+                if line[5] == 'SSLv3':
+                    self.label_ResultSSLv3Https.setText('Yes')
+                else:
+                    self.label_ResultSSLv3Https.setText('No')
+                if line[6] == 'TLS1':
+                    self.label_ResultTLS1Https.setText('Yes')
+                else:
+                    self.label_ResultTLS1Https.setText('No')
+                if line[7] == 'TLS1.1':
+                    self.label_ResultTLS11Https.setText('Yes')
+                else:
+                    self.label_ResultTLS11Https.setText('No')
+                if line[8] == 'TLS1.2':
+                    self.label_ResultTLS12Https.setText('Yes')
+                else:
+                    self.label_ResultTLS12Https.setText('No')
+                if line[9] == 'TLS1.3':
+                    self.label_ResultTLS13Https.setText('Yes')
+                else:
+                    self.label_ResultTLS13Https.setText('No')
+
+            
+
+
+
+        
+
+    def label_clear(self):
+        # Testing Summary
+        self.label_resultDomainName_2.setText('')
+        self.label_resultSTS_2.setText('')  
+        self.label_resultServerBanner_2.setText('')
+        self.label_ResultSignatureHttps_2.setText('')
+        self.label_ResultCerTransHttps_2.setText('')
+        self.label_ResultCerProHttps_2.setText('')
+        self.label_ResultissuerHttps_2.setText('')
+
+        # Testing Protocols
+        self.label_ResultTLS1Https.setText('')
+        self.label_ResultSSLv2Https.setText('')
+        self.label_ResultSSLv3Https.setText('')
+        self.label_ResultTLS11Https.setText('')
+        self.label_ResultTLS12Https.setText('')
+        self.label_ResultTLS13Https.setText('')
+
+        # Testing Vulnerabilities
+        self.label_resultPoodleHttps.setText('')
+        self.label_resultDrownHttps.setText('')
+        self.label_resultBeastHttps.setText('')
+        self.label_resultHeartBleedHttps.setText('')
+        self.label_resultSweet32Https.setText('')
+        self.label_resultLuck13Https.setText('')
     
+    def validate_input(self, target):
+        has_special = any(char in "<>!@#$%^&*()_+-=?&" for char in target)
+        if has_special:
+            print("Special Characters Detected")
+            self.lineEdit_https.setPlaceholderText("Invalid Input")
+            # wait 2 seconds
+            self.lineEdit_https.setStyleSheet('''QLineEdit {
+  border: 2px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}''')
+            self.lineEdit_https.setText('')
+            return False
+        else:
+            self.lineEdit_https.setStyleSheet('''QLineEdit {
+  border: 2px solid green;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}''')
+            return target.lower()
+        
     def createReport(self):
         # Create a PDF canvas
         current_time = datetime.now()

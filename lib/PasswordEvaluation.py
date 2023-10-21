@@ -218,7 +218,6 @@ class PasswordEvaluation(QDialog):
     
     def validate_input(self, password):
         # check password only contains valid characters , a-z, A-Z, 0-9, !@#$%^&*()_+=-, space
-        #valid_input = re.sub(r'[^a-zA-Z0-9!@#$%^&*()_+=-` ]|\s', '', password)
         valid_input = re.sub(r'[^a-zA-Z0-9!@#$%^&*()_+=-` ]', '', password)
 
         # check password not contains a-z, A-Z, 0-9, !@#$%^&*()_+=- 
@@ -467,6 +466,13 @@ class PasswordAttack(QDialog):
         self.dropdown_wordLists.setCurrentIndex(0)
         self.dropdown_wordLists.setEnabled(True)
         self.btn_start_attack.setEnabled(False)
+        self.label_focus_output.setText('')
+        self.label_focus_output.setStyleSheet("color: black;")
+
+    def back_for_password_attack(self):
+        PasswordAttack.clear(self)
+        password = self.lineEdit_passwordDict.text()
+        PasswordEvaluation.check_common_password(self, password, PasswordEvaluation.nordpass_common_passwords)
 
     def open_file_wordlist(self):
         filepath, _ = QFileDialog.getOpenFileName(
@@ -563,8 +569,8 @@ class PasswordAttack(QDialog):
         password_hash = hashlib.md5(password.encode()).hexdigest()
         mode = PasswordAttack.select_mode_attack(self)
         wordlist = PasswordAttack.select_wordlists(self)
-        
-        thread = threading.Thread(target=runner.run_hashcat, args=(mode, wordlist, password_hash, password))
+        main = self
+        thread = threading.Thread(target=runner.run_hashcat, args=(mode, wordlist, password_hash, password, main))
         thread.start()
 
     def on_finished(self):
@@ -582,7 +588,7 @@ class HashcatRunner(QObject):
     def __init__(self):
         super().__init__()
 
-    def run_hashcat(self, mode, wordlist, hash, password):
+    def run_hashcat(self, mode, wordlist, hash, password, main):
         
         if mode == 1:
             # Combinator mode cannot use crackstation.txt
@@ -632,6 +638,8 @@ class HashcatRunner(QObject):
                 # Process the output here
                 if password in line:
                     # Password found, do something
+                    main.label_focus_output.setText(f"Password found: {password}")
+                    main.label_focus_output.setStyleSheet("color: Red;")
                     self.update_text.emit(f"Password found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: cracked\n")
                     break
             process.communicate()
@@ -642,6 +650,8 @@ class HashcatRunner(QObject):
                 try:
                     with open("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/history_of_cracked.txt", "a") as file:
                         file.write(f"Password: {password}\n")
+                        self.label_focus_output.setText(f"Password found: {password}")
+                        self.label_focus_output.setStyleSheet("color: Red;")
                 except Exception as e:
                     #self.update_text.emit(f"Error: {str(e)}")
                     print(f"Error: {str(e)}")
@@ -655,10 +665,14 @@ class HashcatRunner(QObject):
                         for line in file:
                             if password in line:
                                 # show password found & value that we need
+                                main.label_focus_output.setText(f"Password found: {password}")
+                                main.label_focus_output.setStyleSheet("color: Red;")
                                 self.update_text.emit(f"Password found: {password}\n")
                                 break
                             else:
                                 self.update_text.emit(f"Password not found")
+                                main.label_focus_output.setText(f"Password found: {password}")
+                                main.label_focus_output.setStyleSheet("color: Green;")
                                 break
                 except Exception as e:
                     #self.update_text.emit(f"Error: {str(e)}")
@@ -674,3 +688,5 @@ class HashcatRunner(QObject):
 
         except Exception as e:
             self.update_text.emit(f"Error: {str(e)}")
+            main.label_focus_output.setText(f"Password found: {password}")
+            main.label_focus_output.setStyleSheet("color: Green;")

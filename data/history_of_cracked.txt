@@ -5,3 +5,5 @@ Password: peter
 Password: red123
 Password: bandit
 Password: justine1150
+Password: frankie1234
+Password: spider

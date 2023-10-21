@@ -44,7 +44,7 @@ class Main(QMainWindow):
         
         # clear cache data after back button
         self.btn_backPassword.clicked.connect(lambda: PasswordEvaluation.clear(self))
-        self.btn_backDict.clicked.connect(lambda: PasswordAttack.clear(self))
+        self.btn_backDict.clicked.connect(lambda: PasswordAttack.back_for_password_attack(self))
         self.btn_backMalware.clicked.connect(lambda: MalwareScanning.clear(self))
         self.btn_backMSDigest.clicked.connect(lambda: MessageDigest.clear(self))
         self.btn_backVulner.clicked.connect(lambda: VulnerabilityScanning.clear(self))
@@ -212,6 +212,7 @@ class Main(QMainWindow):
     
     def openHttpsHome(self):
         self.stackedWidget.setCurrentWidget(self.page_https)
+        HTTPSTesting.label_clear(self)
 
     # Send Email --------------------------------------------
     def openSendEmail_malware(self):
@@ -226,7 +227,7 @@ class Main(QMainWindow):
         self.stackedWidget.setCurrentWidget(self.page_https_email)
         HTTPSTesting.createReport(self)
 
-    # Setting -----------------------------------------------
+    # Setting -----------------------------------------------sa
 
     def openSettings(self):
         self.stackedWidget.setCurrentWidget(self.page_settings)
