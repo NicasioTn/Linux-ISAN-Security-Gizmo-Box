@@ -437,6 +437,8 @@ from PyQt6.QtCore import Qt, pyqtSignal, QObject
 class PasswordAttack(QDialog):
 
     hide = True
+    pathdirect_wordlist = None
+
     def __init__(self):
         #super(PasswordAttack, self).__init__()
         super().__init__()
@@ -459,8 +461,8 @@ class PasswordAttack(QDialog):
     def clear(self):
         self.lineEdit_inputFileDict.setText('')
         self.lineEdit_inputFileDict.setText('')
-        self.dropdown_modeAttack.setItemText(0, "Mode")
-        self.dropdown_wordLists.setItemText(0, "Wordlists")
+        self.dropdown_modeAttack.setCurrentIndex(0)
+        self.dropdown_wordLists.setCurrentIndex(0)
         self.textEdit_result_hashcat.clear()
         self.dropdown_modeAttack.setCurrentIndex(0)
         self.dropdown_wordLists.setCurrentIndex(0)
@@ -490,34 +492,48 @@ class PasswordAttack(QDialog):
                 path = Path(filepath)
                 #self.lineEdit_inputFileDict.setText(str(path)) # show path file
                 self.lineEdit_inputFileDict.setText(file_name) # show file name
+                PasswordAttack.set_path_wordlist(self, path)
                 if path.exists() != True: # check if file exists 
                     print(f"File exists at: {path.exists()}")
                 print(f"Get file at: {path}") 
+                
 
-                return path
+        return filepath
             
     def check_wordlist(self):
         default_wordlist = ["rockyou.txt", "crackstation.txt"]
         wordlist = self.lineEdit_inputFileDict.text()
         
+        # check if wordlist is empty
         if wordlist == '':
-            self.dropdown_wordLists.setCurrentIndex(0)
+            #self.dropdown_wordLists.setCurrentIndex(0)
             self.btn_start_attack.setEnabled(False)
         else:
             self.btn_start_attack.setEnabled(True)
-            if wordlist not in default_wordlist:
-                self.dropdown_wordLists.setEnabled(False)
-                
 
-        
+        if wordlist not in default_wordlist:
+            self.dropdown_wordLists.setEnabled(False)
+            wordlist = PasswordAttack.get_path_wordlist(self)
+            return wordlist
+        else: 
+            wordlist = PasswordAttack.select_wordlists(self)
+            return wordlist
+    
+    def set_path_wordlist(self, path):
+        PasswordAttack.pathdirect_wordlist = path
+
+    def get_path_wordlist(self):
+        return PasswordAttack.pathdirect_wordlist
+                
     def select_wordlists(self):
         # select wordlists
         wordlist = self.dropdown_wordLists.currentText()
         print("wordlist: ", wordlist)
 
         # check if wordlist is empty
-        if wordlist == 'Dictionary':
-            return
+        if wordlist == 'Wordlists':
+            wordlist = PasswordAttack.get_path_wordlist(self)
+            #return 
         
         # get path of wordlist
         path = Path(f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Wordlists/{wordlist}")
@@ -568,7 +584,7 @@ class PasswordAttack(QDialog):
         password = self.lineEdit_passwordDict.text()
         password_hash = hashlib.md5(password.encode()).hexdigest()
         mode = PasswordAttack.select_mode_attack(self)
-        wordlist = PasswordAttack.select_wordlists(self)
+        wordlist = PasswordAttack.check_wordlist(self)
         main = self
         thread = threading.Thread(target=runner.run_hashcat, args=(mode, wordlist, password_hash, password, main))
         thread.start()
@@ -658,7 +674,6 @@ class HashcatRunner(QObject):
                     
                 self.finished.emit()
             else:
-                #self.update_text.emit(f"Error: Hashcat process exited with code {process.returncode}")
                 #check if password is in the list of history_of_cracked.txt
                 try:
                     with open("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/history_of_cracked.txt", "r") as file:
@@ -670,8 +685,8 @@ class HashcatRunner(QObject):
                                 self.update_text.emit(f"Password found: {password}\n")
                                 break
                             else:
-                                self.update_text.emit(f"Password not found")
-                                main.label_focus_output.setText(f"Password found: {password}")
+                                self.update_text.emit(f"Password not found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: uncracked\n")
+                                main.label_focus_output.setText(f"Password not found: {password}")
                                 main.label_focus_output.setStyleSheet("color: Green;")
                                 break
                 except Exception as e:
@@ -688,5 +703,5 @@ class HashcatRunner(QObject):
 
         except Exception as e:
             self.update_text.emit(f"Error: {str(e)}")
-            main.label_focus_output.setText(f"Password found: {password}")
+            main.label_focus_output.setText(f"Password not found: {password}")
             main.label_focus_output.setStyleSheet("color: Green;")

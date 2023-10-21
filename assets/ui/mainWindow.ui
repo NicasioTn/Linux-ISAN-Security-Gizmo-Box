@@ -4118,7 +4118,7 @@ QPushButton:hover {
                 </property>
                 <property name="icon">
                  <iconset>
-                  <normaloff>../../../../.designer/icons/icon_start.png</normaloff>../../../../.designer/icons/icon_start.png</iconset>
+                  <normaloff>../icons/icon_start.png</normaloff>../icons/icon_start.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -4201,7 +4201,7 @@ QScrollBar::sub-line:vertical {
                     <bool>true</bool>
                    </property>
                    <property name="placeholderText">
-                    <string>Result</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>

@@ -7,3 +7,7 @@ Password: bandit
 Password: justine1150
 Password: frankie1234
 Password: spider
+Password: spider1234
+Password: admin
+Password: california
+Password: root
