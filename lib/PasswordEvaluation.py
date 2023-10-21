@@ -658,13 +658,6 @@ class HashcatRunner(QObject):
                     main.label_focus_output.setText(f"Password found: {password}")
                     main.label_focus_output.setStyleSheet("color: Red;")
                     self.update_text.emit(f"Password found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: cracked\n")
-                    try:
-                        with open("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/history_of_cracked.txt", "a") as file:
-                            file.write(f"Password: {password}\n")
-                            self.label_focus_output.setText(f"Password found: {password}")
-                            self.label_focus_output.setStyleSheet("color: Red;")
-                    except Exception as e:
-                        print(f"Error: {str(e)}")
                     break
             process.communicate()
 
