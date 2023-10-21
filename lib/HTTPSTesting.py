@@ -93,7 +93,7 @@ class HTTPSTesting(QDialog):
 
         testssl = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testssl.sh/testssl.sh" 
         option = "--jsonfile"
-        output_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/output_testssl/testing.json"
+        output_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"
         target = HTTPSTesting.target
         
         # Run testssl.sh
@@ -104,7 +104,7 @@ class HTTPSTesting(QDialog):
 
     def read_output_json(self):
         print("Reading JSON")
-        json_file_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/output_testssl/testing.json"
+        json_file_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"
         # Load the JSON data from the file
         with open(json_file_path, 'r') as json_file:
             data = json.load(json_file)

@@ -14,6 +14,6 @@ subprocess.run(['mv', gizmorun, desktop])
 subprocess.run(['git', 'clone', 'https://github.com/drwetter/testssl.sh.git'])
 
 testssl_dest = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/'
-testssl_souce = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/testssl.sh'
+testssl_souce = '/home/kali/Desktop/testssl.sh'
 # move the testssl.sh file to the data folder
 subprocess.run(['mv', testssl_souce, testssl_dest])
