@@ -1,3 +1,4 @@
+import json
 from PyQt6.QtWidgets import QDialog
 from SendEmail import *
 import PyQt6.QtGui as QtGui
@@ -17,6 +18,33 @@ from reportlab.lib.utils import ImageReader
 class HTTPSTesting(QDialog):
 
     target = ""
+    test_summary = [
+        "cert_commonName",
+        "HSTS",
+        "cert_expirationStatus",
+        "intermediate_cert_badOCSP",
+        "cert_signatureAlgorithm",
+        "certificate_transparency",
+    ]
+
+    protocols_list = [
+        "SSLv2",
+        "SSLv3",
+        "TLS1",
+        "TLS1_1",
+        "TLS1_2",
+        "TLS1_3",
+    ]
+
+    vuln_list = [
+        "POODLE_SSL",
+        "DROWN",
+        "BEAST",
+        "heartbleed",
+        "SWEET32",
+        "LUCKY13",
+    ]
+
     def __init__(self):
         #super(HTTPSTesting, self).__init__()
         super().__init__()
@@ -26,69 +54,14 @@ class HTTPSTesting(QDialog):
         self.btn_scanHttps.setEnabled(True)
         HTTPSTesting.label_clear(self)
     
-    def checkHTTPS(self):
-        text = self.lineEdit_https.text()
-        target = HTTPSTesting.validate_input(self, text)
-        HTTPSTesting.target = target
-            
-    def scanHTTPS(self):
-        HTTPSTesting.label_clear(self)
-        target = HTTPSTesting.target
-        print("Starting Testing " + target)
-        self.btn_scanHttps.setEnabled(False)
-        self.btn_createReportHttps.setEnabled(False)
-
-        testssl = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testssl.sh/testssl.sh" 
-
-
-        vulnerability = subprocess.Popen([testssl, '-p', target], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, error = vulnerability.communicate()
-        output = output.decode('utf-8')
-        error = error.decode('utf-8')
-        for line in output.split('\n'):
-            line = line.strip()
-            if line.startswith('Testing protocols via sockets'):
-                line = line.split(' ')
-                if line[4] == 'SSLv2':
-                    self.label_ResultSSLv2Https.setText('Yes')
-                else:
-                    self.label_ResultSSLv2Https.setText('No')
-                if line[5] == 'SSLv3':
-                    self.label_ResultSSLv3Https.setText('Yes')
-                else:
-                    self.label_ResultSSLv3Https.setText('No')
-                if line[6] == 'TLS1':
-                    self.label_ResultTLS1Https.setText('Yes')
-                else:
-                    self.label_ResultTLS1Https.setText('No')
-                if line[7] == 'TLS1.1':
-                    self.label_ResultTLS11Https.setText('Yes')
-                else:
-                    self.label_ResultTLS11Https.setText('No')
-                if line[8] == 'TLS1.2':
-                    self.label_ResultTLS12Https.setText('Yes')
-                else:
-                    self.label_ResultTLS12Https.setText('No')
-                if line[9] == 'TLS1.3':
-                    self.label_ResultTLS13Https.setText('Yes')
-                else:
-                    self.label_ResultTLS13Https.setText('No')
-
-            
-
-
-
-        
-
     def label_clear(self):
         # Testing Summary
-        self.label_resultDomainName_2.setText('')
-        self.label_resultSTS_2.setText('')  
-        self.label_resultServerBanner_2.setText('')
-        self.label_ResultSignatureHttps_2.setText('')
-        self.label_ResultCerTransHttps_2.setText('')
-        self.label_ResultCerProHttps_2.setText('')
-        self.label_ResultissuerHttps_2.setText('')
+        self.label_result_DomainName.setText('')
+        self.label_result_STS.setText('')  
+        self.label_Result_CertOCSP.setText('')
+        self.label_Result_Signature.setText('')
+        self.label_result_Expiration.setText('')
+        self.label_Result_Transparency.setText('')
 
         # Testing Protocols
         self.label_ResultTLS1Https.setText('')
@@ -105,6 +78,199 @@ class HTTPSTesting(QDialog):
         self.label_resultHeartBleedHttps.setText('')
         self.label_resultSweet32Https.setText('')
         self.label_resultLuck13Https.setText('')
+    
+    def checkHTTPS(self):
+        text = self.lineEdit_https.text()
+        target = HTTPSTesting.validate_input(self, text)
+        HTTPSTesting.target = target
+            
+    def scanHTTPS(self):
+        HTTPSTesting.label_clear(self)
+        target = HTTPSTesting.target
+        print("Starting Testing " + target)
+        self.btn_scanHttps.setEnabled(False)
+        self.btn_createReportHttps.setEnabled(False)
+
+        testssl = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testssl.sh/testssl.sh" 
+        option = "--jsonfile"
+        output_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/output_testssl/testing.json"
+        target = HTTPSTesting.target
+        
+        # Run testssl.sh
+        subprocess.run([testssl, option, output_path, target])
+        print("Testing Done")
+        self.btn_createReportHttps.setEnabled(True)
+        HTTPSTesting.read_output_json(self)
+
+    def read_output_json(self):
+        print("Reading JSON")
+        json_file_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/output_testssl/testing.json"
+        # Load the JSON data from the file
+        with open(json_file_path, 'r') as json_file:
+            data = json.load(json_file)
+        
+        results = []
+
+        for entry in data:
+            result = {
+                "id": entry.get("id", ""),
+                "ip": f"{entry.get('ip', 'Unknown')}",
+                "port": entry.get("port", ""),
+                "severity": entry.get("severity", ""),
+                "finding": entry.get("finding", "")
+            }
+            results.append(result)
+
+        print("Reading JSON Done")
+
+        # ----------------- Testing Summary -----------------
+        print("Test Summary:")
+        for summary in HTTPSTesting.test_summary:
+            result = HTTPSTesting.get_finding_by_id(data, summary)
+            if result is not None:
+                print("Finding for ID {}: {}".format(summary, result["finding"]))
+            else:
+                print("Finding with ID {} not found.".format(summary))
+
+            if summary == "cert_commonName":
+                self.label_result_DomainName.setText(result["finding"])
+            elif summary == "HSTS":
+                self.label_result_STS.setText(result["finding"]) 
+            elif summary == "cert_expirationStatus":
+                self.label_result_Expiration.setText(result["finding"])
+            elif summary == "intermediate_cert_badOCSP":
+                self.label_Result_CertOCSP.setText(result["finding"])
+            elif summary == "cert_signatureAlgorithm":
+                self.label_Result_Signature.setText(result["finding"])
+            elif summary == "certificate_transparency":
+                self.label_Result_Transparency.setText(result["finding"])
+
+        # ----------------- Testing Protocols -----------------
+        print("Testing Protocols:")
+        for protocol in HTTPSTesting.protocols_list:
+            result = HTTPSTesting.get_finding_by_id(data, protocol)
+            if result is not None:
+                print("Finding for ID {}: {}".format(protocol, result["finding"]))
+            else:
+                print("Finding with ID {} not found.".format(protocol))
+
+            if protocol == "SSLv2":
+                #self.label_ResultSSLv2Https.setText(result["finding"])
+                if result["finding"] == "not offered":
+                    self.label_ResultSSLv2Https.setText("No")
+                    self.label_ResultSSLv2Https.setStyleSheet("color: black")
+                else:
+                    self.label_ResultSSLv2Https.setStyleSheet("color: red")
+
+            elif protocol == "SSLv3":
+                #self.label_ResultSSLv3Https.setText(result["finding"])
+                if result["finding"] == "not offered":
+                    self.label_ResultSSLv3Https.setText("No")
+                    self.label_ResultSSLv3Https.setStyleSheet("color: black")
+                else:
+                    self.label_ResultSSLv3Https.setStyleSheet("color: red")
+
+            elif protocol == "TLS1":
+                #self.label_ResultTLS1Https.setText(result["finding"])
+                if result["finding"] == "not offered":
+                    self.label_ResultTLS1Https.setText("No")
+                    self.label_ResultTLS1Https.setStyleSheet("color: black")
+                else:
+                    self.label_ResultTLS1Https.setText("Yes")
+                    self.label_ResultTLS1Https.setStyleSheet("color: green")
+
+            elif protocol == "TLS1_1":
+                #self.label_ResultTLS11Https.setText(result["finding"])
+                if result["finding"] == "not offered":
+                    self.label_ResultTLS11Https.setText("No")
+                    self.label_ResultTLS11Https.setStyleSheet("color: black")
+                else:
+                    self.label_ResultTLS11Https.setText("Yes")
+                    self.label_ResultTLS11Https.setStyleSheet("color: green")
+                
+            elif protocol == "TLS1_2":
+                #self.label_ResultTLS12Https.setText(result["finding"])
+                if result["finding"] == "not offered":
+                    self.label_ResultTLS12Https.setText("No")
+                    self.label_ResultTLS12Https.setStyleSheet("color: black")
+                else:
+                    self.label_ResultTLS12Https.setText("Yes")
+                    self.label_ResultTLS12Https.setStyleSheet("color: green")
+                    
+            elif protocol == "TLS1_3":
+                #self.label_ResultTLS13Https.setText(result["finding"])
+                if result["finding"] == "not offered":
+                    self.label_ResultTLS13Https.setText("No")
+                    self.label_ResultTLS13Https.setStyleSheet("color: red")
+                else:
+                    self.label_ResultTLS13Https.setText("Yes")
+                    self.label_ResultTLS13Https.setStyleSheet("color: green")
+
+        # ----------------- Testing Vulnerabilities -----------------
+        print("Testing Vulnerabilities:")
+        for vuln in HTTPSTesting.vuln_list:
+            result = HTTPSTesting.get_finding_by_id(data, vuln)
+            if result is not None:
+                print("Finding for ID {}: {}".format(vuln, result["finding"]))
+            else:
+                print("Finding with ID {} not found.".format(vuln))
+
+            if vuln == "POODLE_SSL":
+                if "not vulnerable" in result["finding"]:
+                    self.label_resultPoodleHttps.setText("No")
+                    self.label_resultPoodleHttps.setStyleSheet("color: green")
+                else:
+                    self.label_resultPoodleHttps.setText("Yes")
+                    self.label_resultPoodleHttps.setStyleSheet("color: red")
+            
+            elif vuln == "DROWN":
+                if "not vulnerable" in result["finding"]:
+                    self.label_resultDrownHttps.setText("No")
+                    self.label_resultDrownHttps.setStyleSheet("color: green")
+                else:
+                    self.label_resultDrownHttps.setText("Yes")
+                    self.label_resultDrownHttps.setStyleSheet("color: red")
+            
+            elif vuln == "BEAST":
+                if "not vulnerable" in result["finding"]:
+                    self.label_resultBeastHttps.setText("No")
+                    self.label_resultBeastHttps.setStyleSheet("color: green")
+                else:
+                    self.label_resultBeastHttps.setText("Yes")
+                    self.label_resultBeastHttps.setStyleSheet("color: red")
+            
+            elif vuln == "heartbleed":
+                if "not vulnerable" in result["finding"]:
+                    self.label_resultHeartBleedHttps.setText("No")
+                    self.label_resultHeartBleedHttps.setStyleSheet("color: green")
+                else:
+                    self.label_resultHeartBleedHttps.setText("Yes")
+                    self.label_resultHeartBleedHttps.setStyleSheet("color: red")
+            
+            elif vuln == "SWEET32":
+                if "not vulnerable" in result["finding"]:
+                    self.label_resultSweet32Https.setText("No")
+                    self.label_resultSweet32Https.setStyleSheet("color: green")
+                else:
+                    self.label_resultSweet32Https.setText("Yes")
+                    self.label_resultSweet32Https.setStyleSheet("color: red")
+            
+            elif vuln == "LUCKY13":
+                if "not vulnerable" in result["finding"]:
+                    self.label_resultLuck13Https.setText("No")
+                    self.label_resultLuck13Https.setStyleSheet("color: green")
+                else:
+                    self.label_resultLuck13Https.setText("Yes")
+                    self.label_resultLuck13Https.setStyleSheet("color: red")
+
+        # Remove JSON file
+        subprocess.run(["rm", "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/output_testssl/testing.json"])
+
+    def get_finding_by_id(findings, target_id):
+        for finding in findings:
+            if finding["id"] == target_id:
+                return finding
+        return None  # Return None if not found
     
     def validate_input(self, target):
         has_special = any(char in "<>!@#$%^&*()_+-=?&" for char in target)
@@ -322,3 +488,6 @@ QLineEdit:focus {
 
         self.label_countPageReport_https.setText(str(number))
         self.label_Report_https.setPixmap(QtGui.QPixmap(f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_{number}.png"))
+
+
+

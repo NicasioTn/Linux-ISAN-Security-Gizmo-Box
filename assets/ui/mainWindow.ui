@@ -5247,7 +5247,7 @@ QPushButton:hover {
                      <widget class="QPushButton" name="btn_createReport">
                       <property name="minimumSize">
                        <size>
-                        <width>150</width>
+                        <width>170</width>
                         <height>40</height>
                        </size>
                       </property>
@@ -7258,7 +7258,7 @@ QScrollBar::sub-line:vertical {
             <widget class="QPushButton" name="btn_createReportVulner">
              <property name="minimumSize">
               <size>
-               <width>130</width>
+               <width>170</width>
                <height>40</height>
               </size>
              </property>
@@ -7468,7 +7468,7 @@ QPushButton:hover {
            </item>
            <item alignment="Qt::AlignHCenter">
             <widget class="QWidget" name="widget_77" native="true">
-             <layout class="QVBoxLayout" name="verticalLayout_46">
+             <layout class="QVBoxLayout" name="verticalLayout_23">
               <item>
                <widget class="QLineEdit" name="lineEdit_https">
                 <property name="minimumSize">
@@ -7506,11 +7506,11 @@ QLineEdit:focus {
                  <set>Qt::AlignCenter</set>
                 </property>
                 <property name="placeholderText">
-                 <string>ex. example.com or IP</string>
+                 <string>ex. https:// or IP</string>
                 </property>
                </widget>
               </item>
-              <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+              <item>
                <widget class="QWidget" name="widget_76" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_32">
                  <item>
@@ -7642,7 +7642,7 @@ QPushButton:hover {
                    <layout class="QHBoxLayout" name="horizontalLayout_60">
                     <item>
                      <widget class="QWidget" name="widget_73" native="true">
-                      <layout class="QVBoxLayout" name="verticalLayout_32">
+                      <layout class="QVBoxLayout" name="verticalLayout_25">
                        <item>
                         <widget class="QLabel" name="label_testingHttps_2">
                          <property name="minimumSize">
@@ -7660,10 +7660,10 @@ QPushButton:hover {
                          <property name="font">
                           <font>
                            <family>Bahnschrift SemiBold</family>
-                           <pointsize>11</pointsize>
+                           <pointsize>18</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
-                           <underline>true</underline>
+                           <underline>false</underline>
                           </font>
                          </property>
                          <property name="styleSheet">
@@ -7700,7 +7700,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Dimain name</string>
+                          <string>Domain Name</string>
                          </property>
                         </widget>
                        </item>
@@ -7760,7 +7760,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Server banner</string>
+                          <string>Expiration Status</string>
                          </property>
                         </widget>
                        </item>
@@ -7790,7 +7790,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Signature Algorithm</string>
+                          <string>Intermediate Certificate OCSP</string>
                          </property>
                         </widget>
                        </item>
@@ -7820,37 +7820,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Certificate Transparency</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_cerProHttps_2">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>20</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>20</height>
-                          </size>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>Bahnschrift SemiBold</family>
-                           <pointsize>11</pointsize>
-                           <weight>75</weight>
-                           <bold>true</bold>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">color: rgba(0,0,0,255) ;</string>
-                         </property>
-                         <property name="text">
-                          <string>Certificates provided</string>
+                          <string>Signature Algorithm</string>
                          </property>
                         </widget>
                        </item>
@@ -7880,7 +7850,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Issuer</string>
+                          <string>Certificate Transparency</string>
                          </property>
                         </widget>
                        </item>
@@ -7918,7 +7888,7 @@ QPushButton:hover {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_resultDomainName_2">
+                        <widget class="QLabel" name="label_result_DomainName">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -7943,42 +7913,12 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>isanmsu.com</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_resultSTS_2">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>Bahnschrift SemiBold</family>
-                           <pointsize>11</pointsize>
-                           <weight>75</weight>
-                           <bold>true</bold>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">color: rgba(254,61,58,255);</string>
-                         </property>
-                         <property name="text">
-                          <string>No HSTS header</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_resultServerBanner_2">
+                        <widget class="QLabel" name="label_result_STS">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -8003,12 +7943,12 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Apache/2</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_ResultSignatureHttps_2">
+                        <widget class="QLabel" name="label_result_Expiration">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -8033,12 +7973,12 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>SHA256withRSA</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_ResultCerTransHttps_2">
+                        <widget class="QLabel" name="label_Result_CertOCSP">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -8063,12 +8003,12 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Yes (certificate)</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_ResultCerProHttps_2">
+                        <widget class="QLabel" name="label_Result_Signature">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -8093,12 +8033,12 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>2 (2403 bytes)</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_ResultissuerHttps_2">
+                        <widget class="QLabel" name="label_Result_Transparency">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -8123,7 +8063,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>ISRG Root X1</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8162,10 +8102,10 @@ QPushButton:hover {
                          <property name="font">
                           <font>
                            <family>Bahnschrift SemiBold</family>
-                           <pointsize>11</pointsize>
+                           <pointsize>18</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
-                           <underline>true</underline>
+                           <underline>false</underline>
                           </font>
                          </property>
                          <property name="styleSheet">
@@ -8415,7 +8355,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8445,7 +8385,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8475,7 +8415,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8505,7 +8445,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8532,10 +8472,10 @@ QPushButton:hover {
                           </font>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">color: rgba(15,152,72,255);</string>
+                          <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Yes</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8562,10 +8502,10 @@ QPushButton:hover {
                           </font>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">color: rgba(15,152,72,255);</string>
+                          <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>Yes</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8598,10 +8538,10 @@ QPushButton:hover {
                          <property name="font">
                           <font>
                            <family>Bahnschrift SemiBold</family>
-                           <pointsize>11</pointsize>
+                           <pointsize>18</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
-                           <underline>true</underline>
+                           <underline>false</underline>
                           </font>
                          </property>
                          <property name="styleSheet">
@@ -8851,7 +8791,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No, SSL 3 not supported</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8881,7 +8821,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8911,7 +8851,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8941,7 +8881,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No, noheartbeat extension</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -8971,7 +8911,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -9001,7 +8941,7 @@ QPushButton:hover {
                           <string notr="true">color: rgba(0,0,0,255) ;</string>
                          </property>
                          <property name="text">
-                          <string>No</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -9021,7 +8961,7 @@ QPushButton:hover {
             <widget class="QPushButton" name="btn_createReportHttps">
              <property name="minimumSize">
               <size>
-               <width>130</width>
+               <width>170</width>
                <height>40</height>
               </size>
              </property>
