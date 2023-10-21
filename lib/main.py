@@ -140,8 +140,6 @@ class Main(QMainWindow):
         self.btn_createReport.clicked.connect(self.openSendEmail_malware)
 
         ### --------------------- Vulnerability -------------------------------
-        self.progressBar_vulnerScan.setValue(0)
-        self.progressBar_vulnerScan.setVisible(False)
         try:
             self.textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))
         except:
