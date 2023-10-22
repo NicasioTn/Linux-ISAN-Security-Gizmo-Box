@@ -97,10 +97,14 @@ class HTTPSTesting(QDialog):
         target = HTTPSTesting.target
         
         # Run testssl.sh
-        subprocess.run([testssl, option, output_path, target])
-        print("Testing Done")
-        self.btn_createReportHttps.setEnabled(True)
-        HTTPSTesting.read_output_json(self)
+        try:
+            subprocess.run([testssl, option, output_path, target])
+            print("Testing Done")
+            self.btn_createReportHttps.setEnabled(True)
+            HTTPSTesting.read_output_json(self)
+        except Exception as e:
+            print("Error: " + str(e))
+            subprocess.run(["rm", "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"])
 
     def read_output_json(self):
         print("Reading JSON")
@@ -264,7 +268,7 @@ class HTTPSTesting(QDialog):
                     self.label_resultLuck13Https.setStyleSheet("color: red")
 
         # Remove JSON file
-        subprocess.run(["rm", "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/output_testssl/testing.json"])
+        subprocess.run(["rm", "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"])
 
     def get_finding_by_id(findings, target_id):
         for finding in findings:
@@ -274,6 +278,22 @@ class HTTPSTesting(QDialog):
     
     def validate_input(self, target):
         has_special = any(char in "<>!@#$%^&*()_+-=?&" for char in target)
+        if target == "127.0.0.1" or target == "localhost":
+            self.lineEdit_https.setStyleSheet('''QLineEdit {
+  border: 2px solid red;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}''')
+            return "error"
         if has_special:
             print("Special Characters Detected")
             self.lineEdit_https.setPlaceholderText("Invalid Input")
@@ -293,7 +313,7 @@ QLineEdit:focus {
   border-color: rgba(88,199,141,255);
 }''')
             self.lineEdit_https.setText('')
-            return False
+            return "error"
         else:
             self.lineEdit_https.setStyleSheet('''QLineEdit {
   border: 2px solid green;
@@ -312,6 +332,27 @@ QLineEdit:focus {
             return target.lower()
         
     def createReport(self):
+        # Get Data from the ui
+        target = self.lineEdit_https.text()
+        domain_name = self.label_result_DomainName.text()
+        sts = self.label_result_STS.text()
+        cert_ocsp = self.label_Result_CertOCSP.text()
+        signature = self.label_Result_Signature.text()
+        expiration = self.label_result_Expiration.text()
+        transparency = self.label_Result_Transparency.text()
+        sslv2 = self.label_ResultSSLv2Https.text()
+        sslv3 = self.label_ResultSSLv3Https.text()
+        tls1 = self.label_ResultTLS1Https.text()
+        tls11 = self.label_ResultTLS11Https.text()
+        tls12 = self.label_ResultTLS12Https.text()
+        tls13 = self.label_ResultTLS13Https.text()
+        poodle = self.label_resultPoodleHttps.text()
+        drown = self.label_resultDrownHttps.text()
+        beast = self.label_resultBeastHttps.text()
+        heartbleed = self.label_resultHeartBleedHttps.text()
+        sweet32 = self.label_resultSweet32Https.text()
+        lucky13 = self.label_resultLuck13Https.text()
+        
         # Create a PDF canvas
         current_time = datetime.now()
         file_name = f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
@@ -395,42 +436,41 @@ QLineEdit:focus {
 
         # Section 1: Testing Summary
         testing_summary_data = [
-            ['Domain name', 'isanmsu.com'],
-            ['Strict Transport Security', 'No HSTS header'],
-            ['Server banner', 'Apache/2'],
-            ['Signature Algorithm', 'SHA256 with RSA'],
-            ['Certificate Transparency', 'Yes (certificate)'],
-            ['Certificates provided', '2 (2403 bytes)'],
-            ['Issuer', 'ISRG Root X1']
+            ['Domain name', domain_name],
+            ['Strict Transport Security', sts],
+            ['Expiration Status', expiration],
+            ['Intermediate Certificate OSCP', cert_ocsp],
+            ['Signature Algorithm', signature],
+            ['Certificate Transparency', transparency],
         ]
         col_widths = [200] * 2
-        row_heights = [20] * 7 
+        row_heights = [20] * len(testing_summary_data)
         create_section("Testing Summary", testing_summary_data, title_color, col_widths, row_heights, 0)
 
         # Section 2: Testing Protocols
         testing_protocols_data = [
-            ['SSV v2', 'No'],
-            ['SSV v3', 'No'],
-            ['TLS 1', 'No'],
-            ['TLS 1.1', 'No'],
-            ['TLS 1.2', 'Yes'],
-            ['TLS 1.3', 'Yes']
+            ['SSV v2', sslv2],
+            ['SSV v3', sslv3],
+            ['TLS 1', tls1],
+            ['TLS 1.1', tls11],
+            ['TLS 1.2', tls12],
+            ['TLS 1.3', tls13]
         ]
         col_widths = [200] * 2
-        row_heights = [20] * 6 
+        row_heights = [20] * len(testing_protocols_data)
         create_section("Testing Protocols", testing_protocols_data, title_color, col_widths, row_heights, 200)
 
         # Section 3: Testing Vulnerabilities
         testing_vulnerabilities_data = [
-            ['POODLE (SSL v3)', 'No, SSL 3 not supported'],
-            ['DROWN', 'No'],
-            ['BEAST', 'No'],
-            ['Heartbleed', 'No, no Heartbleed extension'],
-            ['SWEET32', 'No'],
-            ['LUCKY13', 'No']
+            ['POODLE (SSL v3)', poodle],
+            ['DROWN', drown],
+            ['BEAST', beast],
+            ['Heartbleed', heartbleed],
+            ['SWEET32', sweet32],
+            ['LUCKY13', lucky13]
         ]
         col_widths = [200] * 2
-        row_heights = [20] * 6 
+        row_heights = [20] * len(testing_vulnerabilities_data)
         create_section("Testing Vulnerabilities", testing_vulnerabilities_data, title_color, col_widths, row_heights, 400)
 
         # Save the PDF
