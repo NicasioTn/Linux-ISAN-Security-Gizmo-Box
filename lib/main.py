@@ -140,10 +140,7 @@ class Main(QMainWindow):
         self.btn_createReport.clicked.connect(self.openSendEmail_malware)
 
         ### --------------------- Vulnerability -------------------------------
-        try:
-            self.textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))
-        except:
-            print('Error: textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))')
+        self.textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))
         # Event Button Page Vulnerability
         self.btn_scanVulner.clicked.connect(lambda: VulnerabilityScanning.prepareCommand(self))
         self.btn_clearVulner.clicked.connect(lambda: VulnerabilityScanning.clear(self))

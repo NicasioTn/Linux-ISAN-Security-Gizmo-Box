@@ -3020,7 +3020,7 @@ border-radius: 20px;</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../../../../.designer/icons/icon_info.png</normaloff>../../../../.designer/icons/icon_info.png</iconset>
+                           <normaloff>../icons/icon_info.png</normaloff>../icons/icon_info.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -7065,6 +7065,36 @@ QPushButton:hover {
                   </widget>
                  </item>
                 </layout>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QProgressBar" name="progressBar_vulner">
+                <property name="minimumSize">
+                 <size>
+                  <width>960</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QProgressBar
+{
+border: 2px solid  grey;
+border-radius: 15px;
+color: black;
+}
+QProgressBar::chunk 
+{
+
+background-color: rgba(8,120,41,255);
+border-radius :15px;
+}     </string>
+                </property>
+                <property name="value">
+                 <number>100</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                </widget>
               </item>
              </layout>
