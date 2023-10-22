@@ -138,7 +138,7 @@ class Main(QMainWindow):
         self.btn_browseMalware.clicked.connect(lambda: MalwareScanning.openFileScanning(self))
         self.btn_clearMalware.clicked.connect(lambda: MalwareScanning.clear(self))
         self.btn_createReport.clicked.connect(self.openSendEmail_malware)
-
+ 
         ### --------------------- Vulnerability -------------------------------
         self.textEdit_ResultScan.textChanged.connect(lambda: VulnerabilityScanning.chech_output(self))
         # Event Button Page Vulnerability
