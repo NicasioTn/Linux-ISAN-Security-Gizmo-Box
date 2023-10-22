@@ -1114,7 +1114,7 @@ QPushButton:hover {
                  </property>
                  <property name="icon">
                   <iconset>
-                   <normaloff>../../../../.designer/icons/icons8-go-back-45.png</normaloff>../../../../.designer/icons/icons8-go-back-45.png</iconset>
+                   <normaloff>../icons/icons8-go-back-45.png</normaloff>../icons/icons8-go-back-45.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -3020,7 +3020,7 @@ border-radius: 20px;</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../icons/icon_info.png</normaloff>../icons/icon_info.png</iconset>
+                           <normaloff>../../../../.designer/icons/icon_info.png</normaloff>../../../../.designer/icons/icon_info.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -3316,7 +3316,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/icon-no.png</normaloff>../../../../.designer/backup/icon-no.png</iconset>
+                        <normaloff>../icons/icon-no.png</normaloff>../icons/icon-no.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -3351,7 +3351,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/icon-no.png</normaloff>../../../../.designer/backup/icon-no.png</iconset>
+                        <normaloff>../icons/icon-no.png</normaloff>../icons/icon-no.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -3386,7 +3386,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/icon-no.png</normaloff>../../../../.designer/backup/icon-no.png</iconset>
+                        <normaloff>../icons/icon-no.png</normaloff>../icons/icon-no.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -3421,7 +3421,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/icon-no.png</normaloff>../../../../.designer/backup/icon-no.png</iconset>
+                        <normaloff>../icons/icon-no.png</normaloff>../icons/icon-no.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -3459,7 +3459,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/icon-no.png</normaloff>../../../../.designer/backup/icon-no.png</iconset>
+                        <normaloff>../icons/icon-no.png</normaloff>../icons/icon-no.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -4649,16 +4649,16 @@ QPushButton:hover {
                      <widget class="QWidget" name="widget_87" native="true">
                       <property name="minimumSize">
                        <size>
-                        <width>600</width>
+                        <width>0</width>
                         <height>0</height>
                        </size>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_70">
-                       <item>
+                       <item alignment="Qt::AlignLeft">
                         <widget class="QLabel" name="label_Analysis">
                          <property name="minimumSize">
                           <size>
-                           <width>0</width>
+                           <width>620</width>
                            <height>30</height>
                           </size>
                          </property>
@@ -4746,7 +4746,7 @@ QPushButton:hover {
                         <widget class="QLabel" name="label_Analysis_2">
                          <property name="minimumSize">
                           <size>
-                           <width>0</width>
+                           <width>620</width>
                            <height>30</height>
                           </size>
                          </property>
@@ -6268,7 +6268,7 @@ QPushButton:hover {
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap>../../../../.designer/images/QR.png</pixmap>
+                       <pixmap>../../../../../../.designer/images/QR.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -9163,7 +9163,7 @@ QPushButton:hover {
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap>../../../../.designer/backup/C:/Users/kanja/OneDrive/Pictures/Screenshots/Screenshot 2023-10-16 152325.png</pixmap>
+                       <pixmap>../../../../../../.designer/backup/C:/Users/kanja/OneDrive/Pictures/Screenshots/Screenshot 2023-10-16 152325.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -9219,7 +9219,7 @@ QPushButton:hover {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</iconset>
+                        <normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -9314,7 +9314,7 @@ QPushButton:hover {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</iconset>
+                        <normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -9836,7 +9836,7 @@ QPushButton:hover {
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap>../../../../.designer/backup/C:/Users/kanja/OneDrive/Pictures/Screenshots/Screenshot 2023-10-16 152325.png</pixmap>
+                       <pixmap>../../../../../../.designer/backup/C:/Users/kanja/OneDrive/Pictures/Screenshots/Screenshot 2023-10-16 152325.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -9892,7 +9892,7 @@ QPushButton:hover {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</iconset>
+                        <normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -9987,7 +9987,7 @@ QPushButton:hover {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</iconset>
+                        <normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -10510,7 +10510,7 @@ QPushButton:hover {
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap>../../../../.designer/backup/C:/Users/kanja/OneDrive/Pictures/Screenshots/Screenshot 2023-10-16 152325.png</pixmap>
+                       <pixmap>../../../../../../.designer/backup/C:/Users/kanja/OneDrive/Pictures/Screenshots/Screenshot 2023-10-16 152325.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -10566,7 +10566,7 @@ QPushButton:hover {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</iconset>
+                        <normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_back.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -10661,7 +10661,7 @@ QPushButton:hover {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</normaloff>../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</iconset>
+                        <normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</normaloff>../../../../../../.designer/backup/C:/Users/kanja/Downloads/icon_next.png</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
