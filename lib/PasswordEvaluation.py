@@ -16,8 +16,6 @@ class PasswordEvaluation(QDialog):
     minpasswordlength = 8
     nordpass_common_passwords = []
 
-    gizmo_data_path = os.getcwd() + "/data"
-
     def __init__(self):
         #super(PasswordEvaluation, self).__init__()
         super().__init__()
@@ -37,7 +35,7 @@ class PasswordEvaluation(QDialog):
     
     def LoadWordlist(self):
         # Load the list of weak passwords
-        with open(f'{PasswordEvaluation.gizmo_data_path}/nordpass_wordlist.json', 'r') as openfile:
+        with open(f'{os.getcwd()}/data/nordpass_wordlist.json', 'r') as openfile:
             json_object = json.load(openfile)
         
         for item in json_object:
@@ -539,7 +537,7 @@ class PasswordAttack(QDialog):
             #return 
         
         # get path of wordlist
-        path = Path(f"{os.getcwd}/data/Wordlists/{wordlist}")
+        path = Path(f"{os.getcwd()}/data/Wordlists/{wordlist}")
         print("path of wordlist: ", path)
 
         # check if wordlist exists
@@ -553,7 +551,7 @@ class PasswordAttack(QDialog):
         return path
     
     def show_loadding(self):
-        self.movie = QMovie(f"{os.getcwd}/assets/images/password-attack.gif")
+        self.movie = QMovie(f"{os.getcwd()}/assets/images/password-attack.gif")
         self.movie.setCacheMode(QMovie.CacheMode.CacheAll)
         self.movie.setSpeed(100)
         self.label_loadding.setMovie(self.movie)
@@ -667,7 +665,7 @@ class HashcatRunner(QObject):
             if process.returncode == 0:
                 #redirect password to history_of_cracked.txt
                 try:
-                    with open(f"{os.getcwd}/data/history_of_cracked.txt", "a") as file:
+                    with open(f"{os.getcwd()}/data/history_of_cracked.txt", "a") as file:
                         file.write(f"Password: {password}\n")
                         self.label_focus_output.setText(f"Password found: {password}")
                         self.label_focus_output.setStyleSheet("color: Red;")
@@ -679,7 +677,7 @@ class HashcatRunner(QObject):
             else:
                 #check if password is in the list of history_of_cracked.txt
                 try:
-                    with open(f"{os.getcwd}/data/history_of_cracked.txt", "r") as file:
+                    with open(f"{os.getcwd()}/data/history_of_cracked.txt", "r") as file:
                         for line in file:
                             if password in line:
                                 # show password found & value that we need

@@ -23,7 +23,7 @@ class MessageDigest(QDialog):
     def LoadAPIKey(self):
         # Fetch API Key from config file
         config = configparser.ConfigParser()
-        configFilePath = f'{os.getcwd}/data/init.conf'
+        configFilePath = f'{os.getcwd()}/data/init.conf'
         config.read(configFilePath)
         if 'LineNotify' in config:
             line_api_key = config.get('LineNotify', 'line_api_key')
@@ -38,7 +38,7 @@ class MessageDigest(QDialog):
 
         # save api key to file init.conf
         config = configparser.ConfigParser()
-        configFilePath = f'{os.getcwd}/data/init.conf'
+        configFilePath = f'{os.getcwd()}/data/init.conf'
         config.read(configFilePath)
         if 'LineNotify' in config:
             config.set('LineNotify', 'line_api_key', str(line_api_key))
@@ -133,7 +133,7 @@ QLineEdit:focus {
 ''')
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
             return
-        imagePath = f"{os.getcwd}/data/MessageDigest-QRCode.png"
+        imagePath = f"{os.getcwd()}/data/MessageDigest-QRCode.png"
         pixmap = QPixmap(imagePath)
         pixmap = pixmap.scaledToWidth(200)
         pixmap = pixmap.scaledToHeight(200)
@@ -528,7 +528,7 @@ QLineEdit:focus {
         token = self.lineEdit_tokenMSDigest.text()
         try:
             if token != '':
-                getQR = f"{os.getcwd}/data/MessageDigest-QRCode.png"
+                getQR = f"{os.getcwd()}/data/MessageDigest-QRCode.png"
                 url = "https://notify-api.line.me/api/notify"
 
                 headers = {"Authorization": "Bearer " + token}

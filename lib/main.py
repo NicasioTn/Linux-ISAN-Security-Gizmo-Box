@@ -1,5 +1,6 @@
 import sys
 import configparser
+import os
 
 from PyQt6.QtWidgets import ( QApplication, QLineEdit, QMainWindow )
 from PyQt6.QtGui import QIcon, QPixmap
@@ -15,25 +16,22 @@ from NordpassRequest import *
 
 class Main(QMainWindow):
     
-    get_asset_path = os.getcwd() + "/assets"
-    home_path = os.getcwd()
-
     def __init__(self):
         super(Main, self).__init__()
-        loadUi(f"{self.home_path}/assets/ui/mainWindow.ui", self)
+        loadUi(f"{os.getcwd()}/assets/ui/mainWindow.ui", self)
          
         # every time the application is run, the wordlist is updated
         NordpassRequest.get_wordlist(self)
 
         # initialize Icon
         self.setWindowTitle("ISAN Security Gizmo Box v1.0")
-        self.setWindowIcon(QIcon(f"{self.get_asset_path}/icons/icon_gixmobox.png"))
-        self.hide_icon = QIcon(f"{self.get_asset_path}/icons/icon_closedeye.png")
-        self.unhide_icon = QIcon(f"{self.get_asset_path}/icons/icon_openeye.png")
-        self.warning_icon = QIcon(f"{self.get_asset_path}/icons/warning-red.png")
-        self.check_icon = QIcon(f"{self.get_asset_path}/icons/Checked.png")
-        self.label_logo = QPixmap(f"{self.get_asset_path}/icons/icon_gixmobox.png")
-        self.image_main = QPixmap(f"{self.get_asset_path}/images/main.png")
+        self.setWindowIcon(QIcon(f"{os.getcwd()}/assets/icons/icon_gixmobox.png"))
+        self.hide_icon = QIcon(f"{os.getcwd()}/assets/icons/icon_closedeye.png")
+        self.unhide_icon = QIcon(f"{os.getcwd()}/assets/icons/icon_openeye.png")
+        self.warning_icon = QIcon(f"{os.getcwd()}/assets/icons/warning-red.png")
+        self.check_icon = QIcon(f"{os.getcwd()}/assets/icons/Checked.png")
+        self.label_logo = QPixmap(f"{os.getcwd()}/assets/icons/icon_gixmobox.png")
+        self.image_main = QPixmap(f"{os.getcwd()}/assets/images/main.png")
 
         # Event Back Button
         self.btn_backAdvancedUser.clicked.connect(self.openHomePage)
