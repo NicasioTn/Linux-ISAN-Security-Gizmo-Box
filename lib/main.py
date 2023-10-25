@@ -154,7 +154,7 @@ class Main(QMainWindow):
         self.btn_createReportVulner.clicked.connect(self.openSendEmail_vulner)
 
         ### --------------------- HTTPS Testing -------------------------------
-
+        HTTPSTesting.init_gif(self) # Initialize the gif
         # Event Button Page HTTPS Testing
         self.btn_scanHttps.clicked.connect(lambda: HTTPSTesting.scanHTTPS(self))
         self.btn_clearHttps.clicked.connect(lambda: HTTPSTesting.clear(self))

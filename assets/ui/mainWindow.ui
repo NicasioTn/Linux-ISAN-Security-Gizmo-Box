@@ -7736,6 +7736,19 @@ QPushButton:hover {
              </layout>
             </widget>
            </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_loading_https">
+             <property name="minimumSize">
+              <size>
+               <width>500</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
            <item>
             <widget class="QWidget" name="widget_75" native="true">
              <layout class="QVBoxLayout" name="verticalLayout_45">

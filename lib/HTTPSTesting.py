@@ -1,8 +1,10 @@
 import json
 import os
+import threading
 from PyQt6.QtWidgets import QDialog
 from SendEmail import *
 import PyQt6.QtGui as QtGui
+from PyQt6.QtWidgets import *
 
 import subprocess
 import datetime
@@ -21,8 +23,9 @@ pdfmetrics.registerFont(TTFont('Barlow-Regular', '/usr/share/fonts/Barlow-Regula
 pdfmetrics.registerFont(TTFont('Barlow-Bold', '/usr/share/fonts/Barlow-Bold.ttf')) 
 pdfmetrics.registerFont(TTFont('Barlow-Medium', '/usr/share/fonts/Barlow-Medium.ttf'))
 
-class HTTPSTesting(QDialog):
+from PyQt6.QtGui import QMovie 
 
+class HTTPSTesting(QDialog):
     target = ""
     test_summary = [
         "cert_commonName",
@@ -55,6 +58,11 @@ class HTTPSTesting(QDialog):
         #super(HTTPSTesting, self).__init__()
         super().__init__()
 
+    def init_gif(self):
+        HTTPSTesting.gif_movie = QMovie(f"{os.getcwd()}/assets/images/loading.gif")
+        self.label_loading_https.setMovie(HTTPSTesting.gif_movie)
+        HTTPSTesting.worker_thread = None
+    
     def clear(self):
         self.lineEdit_https.setText('')
         self.btn_scanHttps.setEnabled(True)
@@ -89,29 +97,48 @@ class HTTPSTesting(QDialog):
         text = self.lineEdit_https.text()
         target = HTTPSTesting.validate_input(self, text)
         HTTPSTesting.target = target
-            
+    
+    def start_gif_animation(self):
+        HTTPSTesting.gif_movie.start()
+
+    def stop_gif_animation(self):
+        HTTPSTesting.gif_movie.stop()
+
     def scanHTTPS(self):
+        self.label_loading_https.setVisible(True)
+        HTTPSTesting.start_gif_animation(self)
         HTTPSTesting.label_clear(self)
-        target = HTTPSTesting.target
-        print("Starting Testing " + target)
-        self.btn_scanHttps.setEnabled(False)
-        self.btn_createReportHttps.setEnabled(False)
+        def scanning_thread():
+            target = HTTPSTesting.target
+            print("Starting Testing " + target)
+            self.btn_scanHttps.setEnabled(False)
+            self.btn_createReportHttps.setEnabled(False)
 
-        testssl = f"{os.getcwd()}/data/testssl.sh/testssl.sh" 
-        option = "--jsonfile"
-        output_path = f"{os.getcwd()}/data/testing.json"
-        target = HTTPSTesting.target
+            testssl = f"{os.getcwd()}/data/testssl.sh/testssl.sh" 
+            option = "--jsonfile"
+            output_path = f"{os.getcwd()}/data/testing.json"
+            target = HTTPSTesting.target
+            
+            # Run testssl.sh
+            try:
+                subprocess.run([testssl, option, output_path, target])
+                print("Testing Done")
+                self.btn_createReportHttps.setEnabled(True)
+                HTTPSTesting.read_output_json(self)
+            except Exception as e:
+                print("Error: " + str(e))
+                subprocess.run(["rm", f"{os.getcwd()}/data/testing.json"])
+            finally:
+                #HTTPSTesting.stop_gif_animation(self)  # Stop the GIF animation
+                self.btn_scanHttps.setEnabled(True)
+                self.label_loading_https.setVisible(False)
+                HTTPSTesting.worker_thread = None
+
+        if HTTPSTesting.worker_thread is None or not HTTPSTesting.worker_thread.isRunning():
+            # Only start a new thread if it's not already running
+            HTTPSTesting.worker_thread = threading.Thread(target=scanning_thread)
+            HTTPSTesting.worker_thread.start()
         
-        # Run testssl.sh
-        try:
-            subprocess.run([testssl, option, output_path, target])
-            print("Testing Done")
-            self.btn_createReportHttps.setEnabled(True)
-            HTTPSTesting.read_output_json(self)
-        except Exception as e:
-            print("Error: " + str(e))
-            subprocess.run(["rm", f"{os.getcwd()}/data/testing.json"])
-
     def read_output_json(self):
         print("Reading JSON")
         json_file_path = f"{os.getcwd()}/data/testing.json"
