@@ -11,22 +11,29 @@ from MessageDigest import *
 from MalwareScanning import *
 from VulnerabilityScanning import *
 from HTTPSTesting import *
+from NordpassRequest import *
 
 class Main(QMainWindow):
     
+    get_asset_path = os.getcwd() + "/assets"
+    home_path = os.getcwd()
+
     def __init__(self):
         super(Main, self).__init__()
-        loadUi("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/ui/mainWindow.ui", self)
+        loadUi(f"{self.home_path}/assets/ui/mainWindow.ui", self)
          
+        # every time the application is run, the wordlist is updated
+        NordpassRequest.get_wordlist(self)
+
         # initialize Icon
         self.setWindowTitle("ISAN Security Gizmo Box v1.0")
-        self.setWindowIcon(QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png"))
-        self.hide_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_closedeye.png")
-        self.unhide_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_openeye.png")
-        self.warning_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/warning-red.png")
-        self.check_icon = QIcon("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/Checked.png")
-        self.label_logo = QPixmap("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/icons/icon_gixmobox.png")
-        self.image_main = QPixmap("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/images/main.png")
+        self.setWindowIcon(QIcon(f"{self.get_asset_path}/icons/icon_gixmobox.png"))
+        self.hide_icon = QIcon(f"{self.get_asset_path}/icons/icon_closedeye.png")
+        self.unhide_icon = QIcon(f"{self.get_asset_path}/icons/icon_openeye.png")
+        self.warning_icon = QIcon(f"{self.get_asset_path}/icons/warning-red.png")
+        self.check_icon = QIcon(f"{self.get_asset_path}/icons/Checked.png")
+        self.label_logo = QPixmap(f"{self.get_asset_path}/icons/icon_gixmobox.png")
+        self.image_main = QPixmap(f"{self.get_asset_path}/images/main.png")
 
         # Event Back Button
         self.btn_backAdvancedUser.clicked.connect(self.openHomePage)

@@ -1,4 +1,5 @@
 import json
+import os
 from PyQt6.QtWidgets import QDialog
 from SendEmail import *
 import PyQt6.QtGui as QtGui
@@ -96,9 +97,9 @@ class HTTPSTesting(QDialog):
         self.btn_scanHttps.setEnabled(False)
         self.btn_createReportHttps.setEnabled(False)
 
-        testssl = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testssl.sh/testssl.sh" 
+        testssl = f"{os.getcwd}/data/testssl.sh/testssl.sh" 
         option = "--jsonfile"
-        output_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"
+        output_path = f"{os.getcwd}/data/testing.json"
         target = HTTPSTesting.target
         
         # Run testssl.sh
@@ -109,11 +110,11 @@ class HTTPSTesting(QDialog):
             HTTPSTesting.read_output_json(self)
         except Exception as e:
             print("Error: " + str(e))
-            subprocess.run(["rm", "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"])
+            subprocess.run(["rm", f"{os.getcwd}/data/testing.json"])
 
     def read_output_json(self):
         print("Reading JSON")
-        json_file_path = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"
+        json_file_path = f"{os.getcwd}/data/testing.json"
         # Load the JSON data from the file
         try:
             with open(json_file_path, 'r') as json_file:
@@ -281,7 +282,7 @@ class HTTPSTesting(QDialog):
         except Exception as e:
             print("Error: " + str(e))
         # Remove JSON file
-        subprocess.run(["rm", "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testing.json"])
+        subprocess.run(["rm", f"{os.getcwd}/data/testing.json"])
 
     def get_finding_by_id(findings, target_id):
         for finding in findings:
@@ -367,7 +368,7 @@ QLineEdit:focus {
         lucky13 = self.label_resultLuck13Https.text()
         
         # Create a PDF canvas
-        file_name = f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
+        file_name = f"{os.getcwd}/data/Reports/HTTPS_Testing_Report.pdf"
         self.btn_file_email_https.setText(file_name.split('/')[-1])
 
         c = canvas.Canvas(file_name, pagesize=A4)
@@ -387,7 +388,7 @@ QLineEdit:focus {
         c.drawString(72, A4[1] - 36, header_text)
 
         # Logo and main title
-        image_path = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/assets/images/report_logo.png'
+        image_path = f'{os.getcwd}/assets/images/report_logo.png'
         img = ImageReader(image_path)
         img_width, img_height = 250, 200
         img_x = (A4[0] - img_width) / 2
@@ -551,7 +552,7 @@ QLineEdit:focus {
         to_receiver_email = self.lineEdit_to_email_https.text()
         subject_receiver = self.lineEdit_subject_email_https.text()
         body = self.textEdit_body_email_https.toPlainText()
-        file = "/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
+        file = f"{os.getcwd}/data/Reports/HTTPS_Testing_Report.pdf"
         
         # if send email success then remove file
         SendEmail.sending(SendEmail, to_receiver_email, subject_receiver, body, file)
@@ -560,7 +561,7 @@ QLineEdit:focus {
     def remove_file(self, file):
         # remove png
         for i in range(10):
-            subprocess.run(["rm", f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_{i}.png"])
+            subprocess.run(["rm", f"{os.getcwd}/data/ImagesfromPDF/output_page_https_{i}.png"])
 
         # remove pdf
         subprocess.run(["rm", file])
@@ -570,13 +571,13 @@ QLineEdit:focus {
         import fitz
 
         # Path to PDF file
-        pdf_file = r"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/Reports/HTTPS_Testing_Report.pdf"
+        pdf_file = f"{os.getcwd}/data/Reports/HTTPS_Testing_Report.pdf"
 
         # Open PDF file
         pdf_doc = fitz.open(pdf_file)
 
         # Output directory
-        output_dir = r"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/"  # Corrected path
+        output_dir = f"{os.getcwd}/data/ImagesfromPDF/"  # Corrected path
 
         # Iterate through pages and convert to PNG
         for page_number, page in enumerate(pdf_doc):
@@ -587,7 +588,7 @@ QLineEdit:focus {
         # Close PDF file
         pdf_doc.close()
 
-        self.label_Report_https.setPixmap(QtGui.QPixmap("/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_0.png"))
+        self.label_Report_https.setPixmap(QtGui.QPixmap(f"{os.getcwd}/data/ImagesfromPDF/output_page_https_0.png"))
         self.label_countPageReport_https.setText("0")
 
     def set_pdf_viewer(self, step):
@@ -604,7 +605,7 @@ QLineEdit:focus {
             number = 0
 
         self.label_countPageReport_https.setText(str(number))
-        self.label_Report_https.setPixmap(QtGui.QPixmap(f"/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/data/ImagesfromPDF/output_page_https_{number}.png"))
+        self.label_Report_https.setPixmap(QtGui.QPixmap(f"{os.getcwd}/data/ImagesfromPDF/output_page_https_{number}.png"))
 
 
 
