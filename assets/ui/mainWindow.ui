@@ -79,7 +79,7 @@ border-radius: 20px;</string>
          </property>
          <property name="font">
           <font>
-           <family>Bahnschrift SemiBold</family>
+           <family>Barlow</family>
            <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -132,7 +132,7 @@ QPushButton:hover {
          </property>
          <property name="font">
           <font>
-           <family>Bahnschrift SemiBold</family>
+           <family>Barlow</family>
            <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -249,7 +249,7 @@ border-radius: 20px;
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>15</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -304,7 +304,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -354,7 +354,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -404,7 +404,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -460,7 +460,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -510,7 +510,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -635,7 +635,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -684,7 +684,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -739,7 +739,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -789,7 +789,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -839,7 +839,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -895,7 +895,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -945,7 +945,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>11</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -1087,7 +1087,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -1149,7 +1149,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -1225,7 +1225,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -1293,7 +1293,7 @@ QCheckBox::indicator:unchecked {
                      <widget class="QLabel" name="label_notifucationSettings">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift Light</family>
+                        <family>Barlow</family>
                         <pointsize>9</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
@@ -1358,7 +1358,7 @@ a specific event, task, or update. </string>
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -1429,7 +1429,7 @@ QCheckBox::indicator:unchecked {
                      <widget class="QLabel" name="label_btn_languageSettings">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift Light</family>
+                        <family>Barlow</family>
                         <pointsize>9</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
@@ -1493,7 +1493,7 @@ QCheckBox::indicator:unchecked {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -1566,7 +1566,7 @@ QCheckBox::indicator:unchecked {
                      <widget class="QLabel" name="label_10">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift Light</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
@@ -1643,7 +1643,7 @@ QCheckBox::indicator:unchecked {
                             </property>
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -1689,7 +1689,7 @@ QCheckBox::indicator:unchecked {
                             </property>
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>12</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -1747,7 +1747,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>10</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -1785,7 +1785,7 @@ QLineEdit:focus {
                      <widget class="QLabel" name="label_LineAPISettings">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift Light</family>
+                        <family>Barlow</family>
                         <pointsize>9</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
@@ -1857,7 +1857,7 @@ into their applications and services.</string>
                             </property>
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -1903,7 +1903,7 @@ into their applications and services.</string>
                             </property>
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>12</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -1961,7 +1961,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>10</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -1999,7 +1999,7 @@ QLineEdit:focus {
                      <widget class="QLabel" name="label_virusTotalAPISettings">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift Light</family>
+                        <family>Barlow</family>
                         <pointsize>9</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
@@ -2066,7 +2066,7 @@ simple scripts to access the information generated by VirusTotal.</string>
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -2145,7 +2145,7 @@ QCheckBox::indicator:unchecked {
                      <widget class="QLabel" name="label_themeSettings">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift Light</family>
+                        <family>Barlow</family>
                         <pointsize>9</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
@@ -2186,7 +2186,7 @@ and operating systems. </string>
              </property>
              <property name="font">
               <font>
-               <family>Bahnschrift SemiBold</family>
+               <family>Barlow</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -2263,7 +2263,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -2341,7 +2341,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -2394,7 +2394,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -2447,7 +2447,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -2572,7 +2572,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -2634,7 +2634,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -2671,7 +2671,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>13</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -2681,7 +2681,7 @@ QPushButton:hover {
                  <string notr="true">color: rgba(40,43,61,255) ;</string>
                 </property>
                 <property name="text">
-                 <string>Search for your Password in the NordPass Wordlists</string>
+                 <string>Search for your Password in the NordPass Wordlist</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -2692,7 +2692,7 @@ QPushButton:hover {
                <widget class="QLabel" name="label_outputSearchNordPass">
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -2716,7 +2716,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -2807,7 +2807,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -2895,7 +2895,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -2928,7 +2928,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -2981,7 +2981,7 @@ border-radius: 20px;</string>
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -3049,7 +3049,7 @@ border-radius: 20px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3093,7 +3093,7 @@ border-radius: 20px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3126,7 +3126,7 @@ border-radius: 20px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3223,7 +3223,7 @@ QProgressBar::chunk
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3251,7 +3251,7 @@ QProgressBar::chunk
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3301,7 +3301,7 @@ QProgressBar::chunk
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3336,7 +3336,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3371,7 +3371,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3406,7 +3406,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3444,7 +3444,7 @@ border-radius: 10px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -3573,7 +3573,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -3635,7 +3635,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -3672,7 +3672,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -3769,7 +3769,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>13</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -3819,7 +3819,7 @@ QLineEdit:focus {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -3872,7 +3872,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -3931,7 +3931,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>13</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -4013,7 +4013,7 @@ QComboBox:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>13</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -4091,7 +4091,7 @@ QComboBox:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -4141,7 +4141,10 @@ QPushButton:hover {
                   <widget class="QLabel" name="label_focus_output">
                    <property name="font">
                     <font>
+                     <family>Barlow</family>
                      <pointsize>18</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -4165,8 +4168,10 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -4224,6 +4229,13 @@ QScrollBar::sub-line:vertical {
                      <width>400</width>
                      <height>350</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Barlow</family>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
                    </property>
                    <property name="text">
                     <string/>
@@ -4338,7 +4350,7 @@ border-radius: 20px;</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Bahnschrift SemiBold</family>
+                      <family>Barlow</family>
                       <pointsize>12</pointsize>
                       <weight>75</weight>
                       <bold>true</bold>
@@ -4400,7 +4412,7 @@ QPushButton:hover {
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>20</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -4437,7 +4449,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -4490,7 +4502,7 @@ QLineEdit:focus {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -4543,7 +4555,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -4596,7 +4608,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -4664,7 +4676,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -4698,6 +4710,11 @@ QPushButton:hover {
                       <layout class="QVBoxLayout" name="verticalLayout_53">
                        <item>
                         <widget class="QWidget" name="widget_88" native="true">
+                         <property name="font">
+                          <font>
+                           <family>Barlow</family>
+                          </font>
+                         </property>
                          <layout class="QVBoxLayout" name="verticalLayout_54">
                           <item alignment="Qt::AlignHCenter|Qt::AlignTop">
                            <widget class="QLabel" name="image_analysis">
@@ -4752,7 +4769,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -4794,7 +4811,7 @@ QPushButton:hover {
                                </property>
                                <property name="font">
                                 <font>
-                                 <family>Bahnschrift SemiBold</family>
+                                 <family>Barlow</family>
                                  <pointsize>11</pointsize>
                                  <weight>75</weight>
                                  <bold>true</bold>
@@ -4818,7 +4835,7 @@ QPushButton:hover {
                                </property>
                                <property name="font">
                                 <font>
-                                 <family>Bahnschrift SemiBold</family>
+                                 <family>Barlow</family>
                                  <pointsize>11</pointsize>
                                  <weight>75</weight>
                                  <bold>true</bold>
@@ -4842,7 +4859,7 @@ QPushButton:hover {
                                </property>
                                <property name="font">
                                 <font>
-                                 <family>Bahnschrift SemiBold</family>
+                                 <family>Barlow</family>
                                  <pointsize>11</pointsize>
                                  <weight>75</weight>
                                  <bold>true</bold>
@@ -4871,7 +4888,7 @@ QPushButton:hover {
                               <widget class="QLabel" name="label_maliciousResult">
                                <property name="font">
                                 <font>
-                                 <family>Bahnschrift SemiBold</family>
+                                 <family>Barlow</family>
                                  <pointsize>11</pointsize>
                                  <weight>75</weight>
                                  <bold>true</bold>
@@ -4889,7 +4906,7 @@ QPushButton:hover {
                               <widget class="QLabel" name="label_suspiciousResult">
                                <property name="font">
                                 <font>
-                                 <family>Bahnschrift SemiBold</family>
+                                 <family>Barlow</family>
                                  <pointsize>13</pointsize>
                                  <weight>75</weight>
                                  <bold>true</bold>
@@ -4907,7 +4924,7 @@ QPushButton:hover {
                               <widget class="QLabel" name="label_undetectedResult">
                                <property name="font">
                                 <font>
-                                 <family>Bahnschrift SemiBold</family>
+                                 <family>Barlow</family>
                                  <pointsize>11</pointsize>
                                  <weight>75</weight>
                                  <bold>true</bold>
@@ -4950,6 +4967,11 @@ QPushButton:hover {
                         <height>65</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">color: rgba(40,43,61,255) ;</string>
                       </property>
@@ -4958,7 +4980,7 @@ QPushButton:hover {
                         <widget class="QLabel" name="label_scanDetail">
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -4976,7 +4998,7 @@ QPushButton:hover {
                         <widget class="QLabel" name="label_dateTimeDetail">
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -5021,7 +5043,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -5047,7 +5069,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_namefile">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5065,7 +5087,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_typeFile">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5083,7 +5105,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_typeScan">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5101,7 +5123,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_sha256">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5119,7 +5141,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_siteName">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5151,7 +5173,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_namefileResult">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5169,7 +5191,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_typeFileResult">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5187,7 +5209,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_typeScanResult">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5205,7 +5227,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_sha256Result">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5223,7 +5245,7 @@ QPushButton:hover {
                            <widget class="QLabel" name="label_siteNameResult">
                             <property name="font">
                              <font>
-                              <family>Bahnschrift SemiBold</family>
+                              <family>Barlow</family>
                               <pointsize>11</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
@@ -5259,7 +5281,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -5304,6 +5326,11 @@ QPushButton:hover {
        <layout class="QHBoxLayout" name="horizontalLayout_19">
         <item alignment="Qt::AlignTop">
          <widget class="QWidget" name="widget_41" native="true">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">QWidget#widget_44,
 QWidget#widget_48,
@@ -5377,7 +5404,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -5439,7 +5466,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -5462,7 +5489,7 @@ QPushButton:hover {
            </item>
            <item alignment="Qt::AlignHCenter">
             <widget class="QWidget" name="widget_45" native="true">
-             <layout class="QVBoxLayout" name="verticalLayout_27">
+             <layout class="QVBoxLayout" name="verticalLayout_26">
               <item>
                <widget class="QLineEdit" name="lineEdit_MSdigest">
                 <property name="minimumSize">
@@ -5473,7 +5500,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -5505,6 +5532,56 @@ QLineEdit:focus {
                </widget>
               </item>
               <item>
+               <widget class="QLineEdit" name="lineEdit_compare">
+                <property name="minimumSize">
+                 <size>
+                  <width>600</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>420</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Barlow</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+  border: 1px solid gray;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+                <property name="placeholderText">
+                 <string>enter digest for compare</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QWidget" name="widget_47" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_20">
                  <item>
@@ -5523,7 +5600,7 @@ QLineEdit:focus {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -5576,7 +5653,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -5616,39 +5693,36 @@ QPushButton:hover {
                 </layout>
                </widget>
               </item>
-             </layout>
-            </widget>
-           </item>
-           <item alignment="Qt::AlignHCenter">
-            <widget class="QWidget" name="widget_46" native="true">
-             <layout class="QHBoxLayout" name="horizontalLayout_21">
               <item>
-               <widget class="QPushButton" name="btn_md5">
-                <property name="minimumSize">
-                 <size>
-                  <width>120</width>
-                  <height>40</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>111</width>
-                  <height>41</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Bahnschrift SemiBold</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton{
+               <widget class="QWidget" name="widget_46" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_21">
+                 <item>
+                  <widget class="QPushButton" name="btn_md5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>111</width>
+                     <height>41</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Barlow</family>
+                     <pointsize>12</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
 		 border: 1px solid gray;
   		color: rgba(40,43,61,255) ;
     }
@@ -5664,39 +5738,39 @@ QPushButton:focus {
   border-color:  rgba(0,143,255,255);
 }
 </string>
-                </property>
-                <property name="text">
-                 <string>MD5</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btn_sha1">
-                <property name="minimumSize">
-                 <size>
-                  <width>120</width>
-                  <height>40</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>111</width>
-                  <height>41</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Bahnschrift SemiBold</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton{
+                   </property>
+                   <property name="text">
+                    <string>MD5</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_sha1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>111</width>
+                     <height>41</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Barlow</family>
+                     <pointsize>12</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
 		 border: 1px solid gray;	
 		color: rgba(40,43,61,255) ;
     }
@@ -5712,39 +5786,39 @@ QPushButton:focus {
   border-color:  rgba(0,143,255,255);
 }
 </string>
-                </property>
-                <property name="text">
-                 <string>SHA-1</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="dropdown_sha2">
-                <property name="minimumSize">
-                 <size>
-                  <width>137</width>
-                  <height>40</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>111</width>
-                  <height>41</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Bahnschrift SemiBold</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QComboBox {
+                   </property>
+                   <property name="text">
+                    <string>SHA-1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="dropdown_sha2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>137</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>111</width>
+                     <height>41</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Barlow</family>
+                     <pointsize>12</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox {
         border: 1px solid gray;
         border-radius: 5px;
         padding: 1px 18px 1px 3px;
@@ -5771,67 +5845,67 @@ QComboBox:hover {
 }
 
 </string>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>10</width>
-                  <height>10</height>
-                 </size>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>SHA-2</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>224 BIT</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>256 BIT</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>384 BIT</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>512 BIT</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="dropdown_sha3">
-                <property name="minimumSize">
-                 <size>
-                  <width>137</width>
-                  <height>40</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>111</width>
-                  <height>41</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Bahnschrift SemiBold</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QComboBox {
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>10</width>
+                     <height>10</height>
+                    </size>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>SHA-2</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>224 BIT</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>256 BIT</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>384 BIT</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>512 BIT</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="dropdown_sha3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>137</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>111</width>
+                     <height>41</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Barlow</family>
+                     <pointsize>12</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox {
         border: 1px solid gray;
         border-radius: 5px;
         padding: 1px 18px 1px 3px;
@@ -5860,38 +5934,57 @@ QComboBox:hover {
 }
 
 </string>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>10</width>
+                     <height>10</height>
+                    </size>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>SHA-3</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>224 BIT</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>256 BIT</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>384 BIT</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>512 BIT</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label_compare">
+                <property name="font">
+                 <font>
+                  <family>Barlow SemiBold</family>
+                  <pointsize>13</pointsize>
+                 </font>
                 </property>
-                <property name="iconSize">
-                 <size>
-                  <width>10</width>
-                  <height>10</height>
-                 </size>
+                <property name="styleSheet">
+                 <string notr="true">color: rgba(40,43,61,255) ;</string>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>SHA-3</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>224 BIT</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>256 BIT</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>384 BIT</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>512 BIT</string>
-                 </property>
-                </item>
+                <property name="text">
+                 <string>Compare Result</string>
+                </property>
                </widget>
               </item>
              </layout>
@@ -5919,13 +6012,13 @@ QComboBox:hover {
                         <widget class="QLabel" name="label_resultDigeat">
                          <property name="maximumSize">
                           <size>
-                           <width>500</width>
+                           <width>200</width>
                            <height>40</height>
                           </size>
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -5961,6 +6054,7 @@ QComboBox:hover {
                          </property>
                          <property name="font">
                           <font>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                           </font>
                          </property>
@@ -6002,7 +6096,7 @@ QLineEdit:focus {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>12</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -6066,7 +6160,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -6134,6 +6228,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
+                           <family>Barlow</family>
                            <pointsize>13</pointsize>
                           </font>
                          </property>
@@ -6175,7 +6270,7 @@ QLineEdit:focus {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>12</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -6227,7 +6322,7 @@ QPushButton:hover {
                      <widget class="QLabel" name="label_type">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>13</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -6260,6 +6355,11 @@ QPushButton:hover {
                         <width>200</width>
                         <height>200</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -6300,7 +6400,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -6353,7 +6453,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -6439,7 +6539,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -6514,7 +6614,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -6567,7 +6667,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -6689,7 +6789,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -6751,7 +6851,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -6774,6 +6874,13 @@ QPushButton:hover {
            </item>
            <item>
             <widget class="QWidget" name="widget_69" native="true">
+             <property name="font">
+              <font>
+               <family>Barlow</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <layout class="QVBoxLayout" name="verticalLayout_41">
               <item alignment="Qt::AlignHCenter">
                <widget class="QLineEdit" name="lineEdit_vulner">
@@ -6785,7 +6892,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>15</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -6835,7 +6942,7 @@ QLineEdit:focus {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -6924,7 +7031,7 @@ QComboBox:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -6974,7 +7081,7 @@ QLineEdit:focus {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -7027,7 +7134,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -7074,6 +7181,13 @@ QPushButton:hover {
                   <width>960</width>
                   <height>35</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Barlow</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QProgressBar
@@ -7131,8 +7245,10 @@ border-radius :15px;
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -7187,8 +7303,10 @@ QScrollBar::sub-line:vertical {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -7218,8 +7336,10 @@ QScrollBar::sub-line:vertical {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>13</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -7261,7 +7381,7 @@ QScrollBar::sub-line:vertical {
              </property>
              <property name="font">
               <font>
-               <family>Bahnschrift SemiBold</family>
+               <family>Barlow</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -7374,7 +7494,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -7436,7 +7556,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -7470,7 +7590,7 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Bahnschrift SemiBold</family>
+                  <family>Barlow</family>
                   <pointsize>15</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -7520,7 +7640,7 @@ QLineEdit:focus {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -7573,7 +7693,7 @@ QPushButton:hover {
                    </property>
                    <property name="font">
                     <font>
-                     <family>Bahnschrift SemiBold</family>
+                     <family>Barlow</family>
                      <pointsize>12</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -7633,6 +7753,11 @@ QPushButton:hover {
                    <layout class="QHBoxLayout" name="horizontalLayout_60">
                     <item>
                      <widget class="QWidget" name="widget_73" native="true">
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_25">
                        <item>
                         <widget class="QLabel" name="label_testingHttps_2">
@@ -7650,7 +7775,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>18</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7681,7 +7806,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7711,7 +7836,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7741,7 +7866,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7771,7 +7896,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7801,7 +7926,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7831,7 +7956,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7867,7 +7992,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7894,7 +8019,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7924,7 +8049,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7954,7 +8079,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -7984,7 +8109,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8014,7 +8139,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8044,7 +8169,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8075,6 +8200,11 @@ QPushButton:hover {
                         <height>0</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout">
                        <item>
                         <widget class="QLabel" name="label_testProtocolsHttps">
@@ -8092,7 +8222,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>18</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8123,7 +8253,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8153,7 +8283,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8183,7 +8313,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8213,7 +8343,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8243,7 +8373,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8273,7 +8403,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8292,6 +8422,11 @@ QPushButton:hover {
                     </item>
                     <item>
                      <widget class="QWidget" name="widget_7" native="true">
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_3">
                        <item>
                         <widget class="QLabel" name="label_null8Https_2">
@@ -8309,7 +8444,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8336,7 +8471,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8366,7 +8501,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8396,7 +8531,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8426,7 +8561,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8456,7 +8591,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8486,7 +8621,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8511,6 +8646,11 @@ QPushButton:hover {
                    <layout class="QHBoxLayout" name="horizontalLayout_64">
                     <item>
                      <widget class="QWidget" name="widget_122" native="true">
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_49">
                        <item>
                         <widget class="QLabel" name="label_testVulnerHttps">
@@ -8528,7 +8668,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>18</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8559,7 +8699,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8589,7 +8729,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8619,7 +8759,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8649,7 +8789,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8679,7 +8819,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8709,7 +8849,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8728,6 +8868,11 @@ QPushButton:hover {
                     </item>
                     <item>
                      <widget class="QWidget" name="widget_125" native="true">
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_59">
                        <item>
                         <widget class="QLabel" name="label">
@@ -8745,7 +8890,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8772,7 +8917,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8802,7 +8947,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8832,7 +8977,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8862,7 +9007,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8892,7 +9037,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8922,7 +9067,7 @@ QPushButton:hover {
                          </property>
                          <property name="font">
                           <font>
-                           <family>Bahnschrift SemiBold</family>
+                           <family>Barlow</family>
                            <pointsize>11</pointsize>
                            <weight>75</weight>
                            <bold>true</bold>
@@ -8964,7 +9109,7 @@ QPushButton:hover {
              </property>
              <property name="font">
               <font>
-               <family>Bahnschrift SemiBold</family>
+               <family>Barlow</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -9072,7 +9217,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -9134,7 +9279,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -9189,6 +9334,11 @@ QPushButton:hover {
                         <height>500</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="text">
                        <string/>
                       </property>
@@ -9222,7 +9372,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9275,7 +9425,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>11</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9314,7 +9464,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9409,7 +9559,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9439,7 +9589,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9458,12 +9608,17 @@ QPushButton:hover {
                  </item>
                  <item alignment="Qt::AlignLeft|Qt::AlignTop">
                   <widget class="QWidget" name="widget_150" native="true">
+                   <property name="font">
+                    <font>
+                     <family>Barlow</family>
+                    </font>
+                   </property>
                    <layout class="QVBoxLayout" name="verticalLayout_11">
                     <item>
                      <widget class="QLabel" name="label_header_email_malware">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9493,6 +9648,11 @@ QPushButton:hover {
                         <width>600</width>
                         <height>40</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
@@ -9527,6 +9687,11 @@ QLineEdit:focus {
                         <height>40</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
   border: 1px solid gray;
@@ -9553,6 +9718,11 @@ QLineEdit:focus {
                         <width>0</width>
                         <height>300</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QTextEdit {
@@ -9589,7 +9759,7 @@ QTextEdit:focus {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9629,7 +9799,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9745,7 +9915,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -9807,7 +9977,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -9862,6 +10032,11 @@ QPushButton:hover {
                         <height>500</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="text">
                        <string/>
                       </property>
@@ -9895,7 +10070,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9948,7 +10123,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>11</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -9987,7 +10162,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10082,7 +10257,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10112,7 +10287,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10136,7 +10311,7 @@ QPushButton:hover {
                      <widget class="QLabel" name="label_header_email_vulner">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10166,6 +10341,11 @@ QPushButton:hover {
                         <width>600</width>
                         <height>40</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
@@ -10200,6 +10380,11 @@ QLineEdit:focus {
                         <height>40</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
   border: 1px solid gray;
@@ -10226,6 +10411,11 @@ QLineEdit:focus {
                         <width>0</width>
                         <height>300</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QTextEdit {
@@ -10262,7 +10452,7 @@ QTextEdit:focus {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10302,7 +10492,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10419,7 +10609,7 @@ border-radius: 20px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Bahnschrift SemiBold</family>
+                   <family>Barlow</family>
                    <pointsize>12</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -10481,7 +10671,7 @@ QPushButton:hover {
               </property>
               <property name="font">
                <font>
-                <family>Bahnschrift SemiBold</family>
+                <family>Barlow</family>
                 <pointsize>20</pointsize>
                 <weight>75</weight>
                 <bold>true</bold>
@@ -10536,6 +10726,11 @@ QPushButton:hover {
                         <height>500</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="text">
                        <string/>
                       </property>
@@ -10569,7 +10764,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10622,7 +10817,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>11</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10661,7 +10856,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>10</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10756,7 +10951,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10786,7 +10981,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10810,7 +11005,7 @@ QPushButton:hover {
                      <widget class="QLabel" name="label_header_email_https">
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10840,6 +11035,11 @@ QPushButton:hover {
                         <width>600</width>
                         <height>40</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
@@ -10874,6 +11074,11 @@ QLineEdit:focus {
                         <height>40</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
   border: 1px solid gray;
@@ -10900,6 +11105,11 @@ QLineEdit:focus {
                         <width>0</width>
                         <height>300</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Barlow</family>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QTextEdit {
@@ -10936,7 +11146,7 @@ QTextEdit:focus {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
@@ -10976,7 +11186,7 @@ QPushButton:hover {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Bahnschrift SemiBold</family>
+                        <family>Barlow</family>
                         <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>

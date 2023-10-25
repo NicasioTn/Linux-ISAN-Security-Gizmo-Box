@@ -76,6 +76,25 @@ QLineEdit:focus {
 }
 ''')
         self.lineEdit_outputTextMSDigest.setPlaceholderText('')
+        self.lineEdit_compare.setPlaceholderText('enter digest for compare')
+        self.label_compare.setText('Compare Result')
+        self.label_compare.setStyleSheet("color: rgba(40,43,61,255) ;")
+        self.lineEdit_compare.setText('')
+        self.lineEdit_compare.setStyleSheet('''QLineEdit {
+  border: 1px solid gray;
+  color: rgba(40,43,61,255);
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
         self.label_type.setText('Type')
         self.btn_saveQR.setText('SAVE')
         MessageDigest.LoadAPIKey(self)
@@ -109,8 +128,10 @@ QLineEdit:focus {
         qr.add_data(hash)
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
-        img.save(f"{os.getcwd}/data/MessageDigest-QRCode.png")
+        img.save(f"{os.getcwd()}/data/MessageDigest-QRCode.png")
         print("QR Code Generated")
+
+        MessageDigest.digest_stringcompare(self)
         return img
         
     def ShowImage_QR(self):
@@ -276,7 +297,6 @@ QLineEdit:focus {
         self.label_type.setText(self.algorithm) if self.lineEdit_MSdigest.text() != '' else self.label_type.setText('Type')
         # reset copy button
         self.btn_copy.setText('Copy')
-
 
         
     def fileExtract(self, type, path):
@@ -524,7 +544,12 @@ QLineEdit:focus {
             self.lineEdit_outputTextMSDigest.setPlaceholderText("Empty")
             return 
         type = self.label_type.text()
-        message = self.lineEdit_outputTextMSDigest.text() + "\nHash Algorithms: " + type
+        compare = self.lineEdit_compare.text()
+        if compare == '':
+            compare = 'Hash not compare'
+        else:
+            compare = self.label_compare.text()
+        message = self.lineEdit_outputTextMSDigest.text() + "\nHash Algorithms: " + type + "\n" + "Compare Hash: " + compare
         token = self.lineEdit_tokenMSDigest.text()
         try:
             if token != '':
@@ -539,7 +564,7 @@ QLineEdit:focus {
                     response = requests.post(url, headers=headers, params=payload, files=files)
                 
                 if response.status_code == 200:
-                    MessageDigest.saveAPIKey(self, self.lineEdit_LineAPISettings.text()) # save api key to file init.conf
+                    #MessageDigest.saveAPIKey(self, self.lineEdit_LineAPISettings.text()) # save api key to file init.conf
                     print("Image sent successfully!")
                     self.lineEdit_tokenMSDigest.setStyleSheet('''QLineEdit {
   border: 1px solid green;
@@ -687,3 +712,54 @@ QLineEdit:focus {
         import webbrowser
         webbrowser.open('https://notify-bot.line.me/doc/en/')
         
+    def digest_stringcompare(self):
+        output_hash = self.lineEdit_outputTextMSDigest.text()
+        compare_hash = self.lineEdit_compare.text()
+        tmp = compare_hash 
+        if compare_hash == 'Match' or compare_hash == 'Not Match':
+            compare_hash = tmp
+
+        print(f'Output Hash: {output_hash}')
+        print(f'Compare Hash: {compare_hash}')
+
+        if compare_hash == '':
+            self.lineEdit_compare.setPlaceholderText("Empty Compare Value")
+            self.lineEdit_compare.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: red;
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
+        else:
+            self.lineEdit_compare.setStyleSheet('''QLineEdit {
+  border: 1px solid green;
+  color: green;
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')
+            # match
+            if output_hash.lower() == compare_hash.lower(): # lower case
+                self.label_compare.setText("Match")
+                self.label_compare.setStyleSheet("color: green;")
+            # not match
+            else:
+                self.label_compare.setText("Not Match")
+                self.label_compare.setStyleSheet("color: red;")
