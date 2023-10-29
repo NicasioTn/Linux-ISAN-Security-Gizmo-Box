@@ -7,6 +7,8 @@ from pathlib import Path
 from math import log2
 from PyQt6.QtGui import QMovie
 
+from MultiselectList import *
+
 class PasswordEvaluation(QDialog):
 
     hide = True
@@ -434,6 +436,8 @@ import subprocess
 import threading
 from PyQt6.QtCore import Qt, pyqtSignal, QObject
 
+from MultiselectList import *
+
 class PasswordAttack(QDialog):
 
     hide = True
@@ -460,16 +464,15 @@ class PasswordAttack(QDialog):
 
     def clear(self):
         self.lineEdit_inputFileDict.setText('')
-        self.lineEdit_inputFileDict.setText('')
-        self.dropdown_modeAttack.setCurrentIndex(0)
-        self.dropdown_wordLists.setCurrentIndex(0)
         self.textEdit_result_hashcat.clear()
-        self.dropdown_modeAttack.setCurrentIndex(0)
-        self.dropdown_wordLists.setCurrentIndex(0)
-        self.dropdown_wordLists.setEnabled(True)
         self.btn_start_attack.setEnabled(False)
         self.label_focus_output.setText('')
         self.label_focus_output.setStyleSheet("color: black;")
+        self.dropdown_modeAttack.setCurrentIndex(0)
+        self.dropdown_modeAttack.setEnabled(True)
+        self.dropdown_wordLists.setCurrentIndex(0)
+        self.dropdown_wordLists.setEnabled(True)
+        PasswordAttack.show_loadding(self, 'default')
 
     def back_for_password_attack(self):
         PasswordAttack.clear(self)
@@ -550,12 +553,19 @@ class PasswordAttack(QDialog):
 
         return path
     
-    def show_loadding(self):
-        self.movie = QMovie(f"{os.getcwd()}/assets/images/password-attack.gif")
-        self.movie.setCacheMode(QMovie.CacheMode.CacheAll)
-        self.movie.setSpeed(100)
-        self.label_loadding.setMovie(self.movie)
-        self.movie.start()
+    def show_loadding(self, status):
+        if status == 'start':
+            self.movie = QMovie(f"{os.getcwd()}/assets/images/password-attack_{status}.gif")
+            self.movie.setCacheMode(QMovie.CacheMode.CacheAll)
+            self.movie.setSpeed(100)
+            self.label_loadding.setMovie(self.movie)
+            self.movie.start()
+        else:
+            self.movie = QMovie(f"{os.getcwd()}/assets/images/password-attack_{status}.gif")
+            self.movie.setCacheMode(QMovie.CacheMode.CacheAll)
+            self.movie.setSpeed(100)
+            self.label_loadding.setMovie(self.movie)
+            self.movie.start()
 
     def select_mode_attack(self):
         mode = self.dropdown_modeAttack.currentText()
@@ -568,25 +578,30 @@ class PasswordAttack(QDialog):
         elif mode == "Skipping 2":
             mode = "7"
         else:
-            mode = None
+            mode = "0" # default
         
         return mode
     
     def start_attack(self):
+        # clear result
         self.textEdit_result_hashcat.clear()
 
         runner = HashcatRunner()
         runner.finished.connect(lambda: PasswordAttack.on_finished(self))
         runner.update_text.connect(lambda text: PasswordAttack.on_update_text(self, text))
 
+        self.dropdown_modeAttack.setEnabled(False)
+        self.dropdown_wordLists.setEnabled(False)
         self.btn_start_attack.setEnabled(False)
-        PasswordAttack.show_loadding(self)
+
+        PasswordAttack.show_loadding(self, 'start')
         
+        # get password to hash & get mode &  get wordlist
         password = self.lineEdit_passwordDict.text()
         password_hash = hashlib.md5(password.encode()).hexdigest()
         mode = PasswordAttack.select_mode_attack(self)
         wordlist = PasswordAttack.check_wordlist(self)
-        main = self
+        main = self # get main window
         thread = threading.Thread(target=runner.run_hashcat, args=(mode, wordlist, password_hash, password, main))
         thread.start()
 
@@ -620,91 +635,176 @@ class HashcatRunner(QObject):
         else:
             # Straight forward mode can use any wordlist
             pass
-
+        
         hashcat_exe = "hashcat"
 
-        if mode == "0": # Straight forward
-            command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} | grep "{password}"'
-            
-        elif mode == "1": # Combination
-            command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} {wordlist} | grep "{password}"'
-            
-        elif mode == "6": # Skipping 1
-            command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} ?d?d?d?d | grep "{password}"'
-        
-        elif mode == "7": # Skipping 2
-            command = f'{hashcat_exe} -m 0 -a {mode} {hash} ?d?d?d?d {wordlist} | grep "{password}"'
-            
-        else:
-            self.update_text.emit(f"No mode selected")
-            return
+        # Multi-Select Wordlist
+        print("wordlist: ", wordlist)
 
-        print(command)
-        if command is None:
-            return "No password found"
-        try:
-            process = subprocess.Popen(
-                command,
-                shell=True,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True
-            )
+        if wordlist is None:
+            text_check = main.lineEdit_inputFileDict.text()
+            if text_check == "Multi-Select Wordlist":
+                multi_list = MultiselectList.right_list
+                print("multi_list: ", multi_list)
 
-            for line in process.stdout:
-                # Process the output here
-                if password in line:
-                    # Password found, do something
-                    main.label_focus_output.setText(f"Password found: {password}")
-                    main.label_focus_output.setStyleSheet("color: Red;")
-                    self.update_text.emit(f"Password found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: cracked\n")
-                    break
-            process.communicate()
-
-            # Check if the process was successful or not
-            if process.returncode == 0:
-                #redirect password to history_of_cracked.txt
-                try:
-                    with open(f"{os.getcwd()}/data/history_of_cracked.txt", "a") as file:
-                        file.write(f"Password: {password}\n")
-                        self.label_focus_output.setText(f"Password found: {password}")
-                        self.label_focus_output.setStyleSheet("color: Red;")
-                except Exception as e:
-                    #self.update_text.emit(f"Error: {str(e)}")
-                    print(f"Error: {str(e)}")
+                # run hashcat with multi_list ex. [rockyou.txt, crackstation.txt, etc.] until password found
+                for dict in multi_list:
+                    if "Password found:" in main.label_focus_output.text():
+                        break
                     
-                self.finished.emit()
-            else:
-                #check if password is in the list of history_of_cracked.txt
-                try:
-                    with open(f"{os.getcwd()}/data/history_of_cracked.txt", "r") as file:
-                        for line in file:
+                    dict = Path(f"{os.getcwd()}/data/Wordlists/{dict}")
+                    command = f'{hashcat_exe} -m 0 -a {mode} {hash} {dict} | grep "{password}"'
+                    print(command)
+                    if command is None:
+                        return "No password found"
+                    try:
+                        process = subprocess.Popen(
+                            command,
+                            shell=True,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            text=True
+                        )
+
+                        for line in process.stdout:
+                            # Process the output here
                             if password in line:
-                                # show password found & value that we need
+                                # Password found, do something
                                 main.label_focus_output.setText(f"Password found: {password}")
                                 main.label_focus_output.setStyleSheet("color: Red;")
-                                self.update_text.emit(f"Password found: {password}\n")
+                                self.update_text.emit(f"Password found: {password}\nHash: {hash}\nWordlist: {dict}\nMode: {mode}\nstatus: cracked\n")
                                 break
-                            else:
-                                self.update_text.emit(f"Password not found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: uncracked\n")
-                                main.label_focus_output.setText(f"Password not found: {password}")
-                                main.label_focus_output.setStyleSheet("color: Green;")
-                                break
-                except Exception as e:
-                    #self.update_text.emit(f"Error: {str(e)}")
-                    print(f"Error: {str(e)}")
-            
-            if process.returncode == 255:
-                print("Hashcat Error: Invalid argument")
-                # Additional debug output
-                for line in process.stderr:
-                    self.update_text.emit(f"Hashcat Error Output: {line}")
-            
-            if process.returncode == 4294967295:
-                print("Hashcat Error: Hashcat is already running")
-                self.update_text.emit(f"Error: Hashcat process exited with code {process.returncode}")
+                        process.communicate()
 
-        except Exception as e:
-            self.update_text.emit(f"Error: {str(e)}")
-            main.label_focus_output.setText(f"Password not found: {password}")
-            main.label_focus_output.setStyleSheet("color: Green;")
+                        # Check if the process was successful or not
+                        if process.returncode == 0:
+                            print("hashcat status: 0")
+                            #redirect password to history_of_cracked.txt
+                            try:
+                                with open(f"{os.getcwd()}/data/history_of_cracked.txt", "a") as file:
+                                    file.write(f"Password: {password}\n")
+                                    self.label_focus_output.setText(f"Password found: {password}")
+                                    self.label_focus_output.setStyleSheet("color: Red;")
+                            except Exception as e:
+                                #self.update_text.emit(f"Error: {str(e)}")
+                                print(f"Error: {str(e)}")
+                                
+                            self.finished.emit()
+                        else:
+                            #check if password is in the list of history_of_cracked.txt
+                            try:
+                                with open(f"{os.getcwd()}/data/history_of_cracked.txt", "r") as file:
+                                    for line in file:
+                                        if password in line:
+                                            # show password found & value that we need
+                                            main.label_focus_output.setText(f"Password found: {password}")
+                                            main.label_focus_output.setStyleSheet("color: Red;")
+                                            self.update_text.emit(f"Password found: {password}\n")
+                                            break
+                                        else:
+                                            self.update_text.emit(f"Password not found: {password}\nHash: {hash}\nWordlist: {dict}\nMode: {mode}\nstatus: uncracked\n")
+                                            main.label_focus_output.setText(f"Password not found: {password}")
+                                            main.label_focus_output.setStyleSheet("color: Green;")
+                                            break
+                            except Exception as e:
+                                #self.update_text.emit(f"Error: {str(e)}")
+                                print(f"Error: {str(e)}")
+                        
+                        if process.returncode == 255:
+                            print("Hashcat Error: Invalid argument")
+                            # Additional debug output
+                    except Exception as e:
+                        self.update_text.emit(f"Error: {str(e)}")
+                        main.label_focus_output.setText(f"Password not found: {password}")
+                        main.label_focus_output.setStyleSheet("color: Green;")   
+            else:
+                self.update_text.emit(f"Error: No wordlist selected")
+                return
+            
+        else:
+            # if Wordlist Normal case
+            if mode == "0": # Straight forward
+                command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} | grep "{password}"'
+                
+            elif mode == "1": # Combination
+                command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} {wordlist} | grep "{password}"'
+                
+            elif mode == "6": # Skipping 1
+                command = f'{hashcat_exe} -m 0 -a {mode} {hash} {wordlist} ?d?d?d?d | grep "{password}"'
+            
+            elif mode == "7": # Skipping 2
+                command = f'{hashcat_exe} -m 0 -a {mode} {hash} ?d?d?d?d {wordlist} | grep "{password}"'
+                
+            else:
+                self.update_text.emit(f"No mode selected")
+                return
+
+            print(command)
+            if command is None:
+                return "No password found"
+            try:
+                process = subprocess.Popen(
+                    command,
+                    shell=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    text=True
+                )
+
+                for line in process.stdout:
+                    # Process the output here
+                    if password in line:
+                        # Password found, do something
+                        main.label_focus_output.setText(f"Password found: {password}")
+                        main.label_focus_output.setStyleSheet("color: Red;")
+                        self.update_text.emit(f"Password found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: cracked\n")
+                        break
+                process.communicate()
+
+                # Check if the process was successful or not
+                if process.returncode == 0:
+                    #redirect password to history_of_cracked.txt
+                    try:
+                        with open(f"{os.getcwd()}/data/history_of_cracked.txt", "a") as file:
+                            file.write(f"Password: {password}\n")
+                            self.label_focus_output.setText(f"Password found: {password}")
+                            self.label_focus_output.setStyleSheet("color: Red;")
+                    except Exception as e:
+                        #self.update_text.emit(f"Error: {str(e)}")
+                        print(f"Error: {str(e)}")
+                        
+                    self.finished.emit()
+                else:
+                    #check if password is in the list of history_of_cracked.txt
+                    try:
+                        with open(f"{os.getcwd()}/data/history_of_cracked.txt", "r") as file:
+                            for line in file:
+                                if password in line:
+                                    # show password found & value that we need
+                                    main.label_focus_output.setText(f"Password found: {password}")
+                                    main.label_focus_output.setStyleSheet("color: Red;")
+                                    self.update_text.emit(f"Password found: {password}\n")
+                                    break
+                                else:
+                                    self.update_text.emit(f"Password not found: {password}\nHash: {hash}\nWordlist: {wordlist}\nMode: {mode}\nstatus: uncracked\n")
+                                    main.label_focus_output.setText(f"Password not found: {password}")
+                                    main.label_focus_output.setStyleSheet("color: Green;")
+                                    break
+                    except Exception as e:
+                        #self.update_text.emit(f"Error: {str(e)}")
+                        print(f"Error: {str(e)}")
+                
+                if process.returncode == 255:
+                    print("Hashcat Error: Invalid argument")
+                    # Additional debug output
+                    for line in process.stderr:
+                        self.update_text.emit(f"Hashcat Error Output: {line}")
+                
+                if process.returncode == 4294967295:
+                    print("Hashcat Error: Hashcat is already running")
+                    self.update_text.emit(f"Error: Hashcat process exited with code {process.returncode}")
+
+            except Exception as e:
+                self.update_text.emit(f"Error: {str(e)}")
+                main.label_focus_output.setText(f"Password not found: {password}")
+                main.label_focus_output.setStyleSheet("color: Green;")

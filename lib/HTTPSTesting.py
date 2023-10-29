@@ -574,8 +574,6 @@ QLineEdit:focus {
         HTTPSTesting.convert_pdf_to_png(self)
 
     def send_email(self):
-        self.btn_sendReport_email_https.setText("Sending...")
-
         to_receiver_email = self.lineEdit_to_email_https.text()
         subject_receiver = self.lineEdit_subject_email_https.text()
         body = self.textEdit_body_email_https.toPlainText()
@@ -583,6 +581,7 @@ QLineEdit:focus {
         
         valid_email = SendEmail.validate_email(self, to_receiver_email)
         if valid_email == False:
+            self.btn_sendReport_email_https.setText("Send")
             self.lineEdit_to_email_https.setText("")
             self.lineEdit_to_email_https.setStyleSheet('''QLineEdit {
   border: 1px solid red;
@@ -598,6 +597,7 @@ QLineEdit:focus {
   border-color: rgba(88,199,141,255);
 }''')
         else:
+            self.btn_sendReport_email_https.setText("Sent")
             self.lineEdit_to_email_https.setStyleSheet('''QLineEdit {
   border: 1px solid green;
   color: rgba(40,43,61,255);

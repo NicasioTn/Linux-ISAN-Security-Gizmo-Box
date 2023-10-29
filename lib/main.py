@@ -13,6 +13,7 @@ from MalwareScanning import *
 from VulnerabilityScanning import *
 from HTTPSTesting import *
 from NordpassRequest import *
+from MultiselectList import *
 
 class Main(QMainWindow):
     
@@ -21,7 +22,7 @@ class Main(QMainWindow):
         loadUi(f"{os.getcwd()}/assets/ui/mainWindow.ui", self)
          
         # every time the application is run, the wordlist is updated
-        NordpassRequest.get_wordlist(self)
+        # NordpassRequest.get_wordlist(self)
 
         # initialize Icon
         self.setWindowTitle("ISAN Security Gizmo Box v1.0")
@@ -109,16 +110,19 @@ class Main(QMainWindow):
         self.btn_dictAttack.clicked.connect(self.Passowrd_Dictionary_Attack)
         self.btn_infoEntropy.clicked.connect(lambda: PasswordEvaluation.infoEntropy(self))
 
-        ### --------------------- Dictionary Attack -------------------------
+        ### --------------------- Password Attack -------------------------
         
-        # Event Button Page Dictionary Attack
+        # Event Button Page Password Attack
         self.btn_browseDict.clicked.connect(lambda: PasswordAttack.open_file_wordlist(self))
         self.btn_clearDict.clicked.connect(lambda: PasswordAttack.clear(self))
         self.btn_showPasswordDict.clicked.connect(lambda: PasswordAttack.show_hide_password(self))
         self.dropdown_wordLists.activated.connect(lambda: PasswordAttack.select_wordlists(self))
         self.btn_start_attack.clicked.connect(lambda: PasswordAttack.start_attack(self))
         self.lineEdit_inputFileDict.textChanged.connect(lambda: PasswordAttack.check_wordlist(self))
-        PasswordAttack.show_loadding(self)
+        PasswordAttack.show_loadding(self, status='default')
+
+        # open the multiwordlist window
+        self.btn_select_multiWordlists.clicked.connect(self.openMultiWordlistWindow)
 
         ### --------------------- Message Digest ------------------------------
         MessageDigest.LoadAPIKey(self) # Load API Key from config file
@@ -226,6 +230,24 @@ class Main(QMainWindow):
     def openSendEmail_https(self):
         self.stackedWidget.setCurrentWidget(self.page_https_email)
         HTTPSTesting.createReport(self)
+
+    def openMultiWordlistWindow(self):
+        multiselectlist = MultiselectList()
+        multiselectlist.show()
+        selected = multiselectlist.btn_ok.clicked.connect(lambda: multiselectlist.get_list_items(multiselectlist.listWidget_right))
+        if selected == None:
+            self.lineEdit_inputFileDict.setText("")
+            self.dropdown_modeAttack.setCurrentIndex(0)
+            self.dropdown_modeAttack.setEnabled(True)
+            self.dropdown_wordLists.setCurrentIndex(0)
+            self.dropdown_wordLists.setEnabled(True)
+        else:
+            self.lineEdit_inputFileDict.setText("Multi-Select Wordlist")
+            self.dropdown_modeAttack.setCurrentIndex(1)
+            self.dropdown_modeAttack.setEnabled(False)
+            self.dropdown_wordLists.setCurrentIndex(0)
+            self.dropdown_wordLists.setEnabled(False)
+
 
     # Setting -----------------------------------------------sa
 

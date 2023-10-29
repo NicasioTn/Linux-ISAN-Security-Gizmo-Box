@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1398</width>
-    <height>891</height>
+    <width>1272</width>
+    <height>914</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -3757,7 +3757,7 @@ QPushButton:hover {
                <widget class="QLineEdit" name="lineEdit_inputFileDict">
                 <property name="minimumSize">
                  <size>
-                  <width>400</width>
+                  <width>450</width>
                   <height>45</height>
                  </size>
                 </property>
@@ -4076,10 +4076,63 @@ QComboBox:hover {
                </widget>
               </item>
               <item>
+               <widget class="QPushButton" name="btn_select_multiWordlists">
+                <property name="minimumSize">
+                 <size>
+                  <width>190</width>
+                  <height>45</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>170</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Barlow</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {    
+    border: 1px solid rgba(40,43,61,255) ;
+    border-radius: 20px;
+    padding: 5px 10px;
+	color: rgba(40,43,61,255) ;
+}
+
+QPushButton:hover {
+    background-color: ;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Multi-Wordlists</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../icons/icon_folder.png</normaloff>../icons/icon_folder.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>35</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QPushButton" name="btn_start_attack">
                 <property name="minimumSize">
                  <size>
-                  <width>300</width>
+                  <width>200</width>
                   <height>45</height>
                  </size>
                 </property>
