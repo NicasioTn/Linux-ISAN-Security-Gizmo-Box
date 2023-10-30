@@ -22,7 +22,7 @@ subprocess.run(['mv', testssl_souce, testssl_dest])
 
 # create logo.Desktop file with relative path
 path = os.getcwd()
-logo = path + '/assets/icon_gixmobox.png'
+logo = path + '/Linux-ISAN-Security-Gizmo-Box/assets/icon_gixmobox.png'
 logo_desktop = logo
 logo_desktop_file = open(logo_desktop, 'w')
 logo_desktop_file.write('[Desktop Entry]\n')
