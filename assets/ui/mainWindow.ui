@@ -3972,11 +3972,6 @@ QComboBox:hover {
                 </property>
                 <item>
                  <property name="text">
-                  <string>Mode</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
                   <string>Straight forward</string>
                  </property>
                 </item>
@@ -4060,17 +4055,22 @@ QComboBox:hover {
                 </property>
                 <item>
                  <property name="text">
-                  <string>Wordlists</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
                   <string>rockyou.txt</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
                   <string>crackstation.txt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Multi-wordlist</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Browse-wordlist</string>
                  </property>
                 </item>
                </widget>

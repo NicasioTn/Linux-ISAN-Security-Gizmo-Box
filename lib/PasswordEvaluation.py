@@ -463,9 +463,9 @@ class PasswordAttack(QDialog):
             self.btn_showPasswordDict.setIcon(self.unhide_icon)
 
     def clear(self):
-        self.lineEdit_inputFileDict.setText('')
+        #self.lineEdit_inputFileDict.setText('')
+        #self.btn_start_attack.setEnabled(False)
         self.textEdit_result_hashcat.clear()
-        self.btn_start_attack.setEnabled(False)
         self.label_focus_output.setText('')
         self.label_focus_output.setStyleSheet("color: black;")
         self.dropdown_modeAttack.setCurrentIndex(0)
@@ -473,6 +473,8 @@ class PasswordAttack(QDialog):
         self.dropdown_wordLists.setCurrentIndex(0)
         self.dropdown_wordLists.setEnabled(True)
         PasswordAttack.show_loadding(self, 'default')
+        self.lineEdit_inputFileDict.setText('rockyou.txt')
+        PasswordAttack.set_path_wordlist(self, os.getcwd() + "/data/Wordlists/rockyou.txt")
 
     def back_for_password_attack(self):
         PasswordAttack.clear(self)
@@ -496,6 +498,7 @@ class PasswordAttack(QDialog):
                 #self.lineEdit_inputFileDict.setText(str(path)) # show path file
                 self.lineEdit_inputFileDict.setText(file_name) # show file name
                 PasswordAttack.set_path_wordlist(self, path)
+                self.dropdown_wordLists.setCurrentIndex(3)
                 if path.exists() != True: # check if file exists 
                     print(f"File exists at: {path.exists()}")
                 print(f"Get file at: {path}") 
@@ -640,6 +643,8 @@ class HashcatRunner(QObject):
 
         # Multi-Select Wordlist
         print("wordlist: ", wordlist)
+        if main.lineEdit_inputFileDict.text() == "Multi-Select Wordlist":
+            wordlist = None
 
         if wordlist is None:
             text_check = main.lineEdit_inputFileDict.text()

@@ -38,8 +38,7 @@ with open(gizmorun, 'w') as f:
     f.write('StartupNotify=false\n')
 
 # move the GizmoBox.desktop file to the desktop
-subprocess.run(['mv', gizmorun, desktop])
-# copy the GizmoBox.desktop file to the current directory
-subprocess.run(['cp', gizmorun, dir_path])
+subprocess.run(['cp', gizmorun, desktop])
+
 # set gio command to allow the GizmoBox.desktop file to be executable
 subprocess.run(['gio', 'set', gizmorun, 'metadata::trusted', 'yes'])

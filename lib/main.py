@@ -22,7 +22,7 @@ class Main(QMainWindow):
         loadUi(f"{os.getcwd()}/assets/ui/mainWindow.ui", self)
          
         # every time the application is run, the wordlist is updated
-        NordpassRequest.get_wordlist(self)
+        # NordpassRequest.get_wordlist(self)
 
         # initialize Icon
         self.setWindowTitle("ISAN Security Gizmo Box v1.0")
@@ -196,6 +196,8 @@ class Main(QMainWindow):
         self.lineEdit_passwordDict.setText(self.lineEdit_password.text())
         self.stackedWidget.setCurrentWidget(self.page_passwordAttack)
         PasswordAttack.init(self)
+        self.lineEdit_inputFileDict.setText("rockyou.txt")
+        PasswordAttack.set_path_wordlist(self, os.getcwd() + "/data/Wordlists/rockyou.txt")
     
     def openMalwareHome(self):
         MalwareScanning.show_resultimage(self, type='scan', status='default')
@@ -243,11 +245,10 @@ class Main(QMainWindow):
             self.dropdown_wordLists.setEnabled(True)
         else:
             self.lineEdit_inputFileDict.setText("Multi-Select Wordlist")
-            self.dropdown_modeAttack.setCurrentIndex(1)
+            self.dropdown_modeAttack.setCurrentIndex(0)
             self.dropdown_modeAttack.setEnabled(False)
-            self.dropdown_wordLists.setCurrentIndex(0)
+            self.dropdown_wordLists.setCurrentIndex(2)
             self.dropdown_wordLists.setEnabled(False)
-
 
     # Setting -----------------------------------------------sa
 
