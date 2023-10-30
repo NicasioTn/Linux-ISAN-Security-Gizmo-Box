@@ -18,8 +18,8 @@ subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PyMuPDF', 'pyqt6
 #clone the testssl.sh repo
 subprocess.run(['git', 'clone', 'https://github.com/drwetter/testssl.sh.git'])
 
-testssl_dest = os.path.expanduser("~/Desktop/Linux-ISAN-Security-Gizmo-Box/data/testssl.sh")
-testssl_souce = os.path.expanduser("~/Desktop/testssl.sh/testssl.sh")
+testssl_dest = os.path.expanduser("~/Desktop/Linux-ISAN-Security-Gizmo-Box/data/")
+testssl_souce = os.path.expanduser("~/Desktop/testssl.sh/")
 
 # # move the testssl.sh file to the data folder
 subprocess.run(['mv', testssl_souce, testssl_dest])
