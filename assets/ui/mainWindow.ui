@@ -6925,7 +6925,7 @@ QPushButton:hover {
              </widget>
             </widget>
            </item>
-           <item>
+           <item alignment="Qt::AlignHCenter">
             <widget class="QWidget" name="widget_69" native="true">
              <property name="font">
               <font>
@@ -6934,8 +6934,8 @@ QPushButton:hover {
                <bold>true</bold>
               </font>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_41">
-              <item alignment="Qt::AlignHCenter">
+             <layout class="QVBoxLayout" name="verticalLayout_27">
+              <item>
                <widget class="QLineEdit" name="lineEdit_vulner">
                 <property name="minimumSize">
                  <size>
@@ -6976,7 +6976,7 @@ QLineEdit:focus {
                 </property>
                </widget>
               </item>
-              <item alignment="Qt::AlignHCenter">
+              <item>
                <widget class="QWidget" name="widget_70" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_30">
                  <item>
@@ -7227,40 +7227,16 @@ QPushButton:hover {
                 </layout>
                </widget>
               </item>
-              <item alignment="Qt::AlignHCenter">
-               <widget class="QProgressBar" name="progressBar_vulner">
+              <item>
+               <widget class="QLabel" name="label_loading_vulner">
                 <property name="minimumSize">
                  <size>
-                  <width>960</width>
-                  <height>35</height>
+                  <width>500</width>
+                  <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <family>Barlow</family>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QProgressBar
-{
-border: 2px solid  grey;
-border-radius: 15px;
-color: black;
-}
-QProgressBar::chunk 
-{
-
-background-color: rgba(8,120,41,255);
-border-radius :15px;
-}     </string>
-                </property>
-                <property name="value">
-                 <number>100</number>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                <property name="text">
+                 <string>TextLabel</string>
                 </property>
                </widget>
               </item>
