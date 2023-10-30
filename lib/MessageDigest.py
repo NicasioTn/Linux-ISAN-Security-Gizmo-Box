@@ -740,7 +740,12 @@ QLineEdit:focus {
 }
 ''')
         else:
-            self.lineEdit_compare.setStyleSheet('''QLineEdit {
+            
+            # match
+            if output_hash.lower() == compare_hash.lower(): # lower case
+                self.label_compare.setText("Match")
+                self.label_compare.setStyleSheet("color: green;")
+                self.lineEdit_compare.setStyleSheet('''QLineEdit {
   border: 1px solid green;
   color: green;
   border-radius: 5px;
@@ -755,11 +760,22 @@ QLineEdit:focus {
   border-color: rgba(88,199,141,255);
 }
 ''')
-            # match
-            if output_hash.lower() == compare_hash.lower(): # lower case
-                self.label_compare.setText("Match")
-                self.label_compare.setStyleSheet("color: green;")
             # not match
             else:
                 self.label_compare.setText("Not Match")
                 self.label_compare.setStyleSheet("color: red;")
+                self.lineEdit_compare.setStyleSheet('''QLineEdit {
+  border: 1px solid red;
+  color: red;
+  border-radius: 5px;
+}
+
+QLineEdit:hover {
+  border: 2px solid;
+  border-color: rgba(0,143,255,255);
+}
+QLineEdit:focus {
+  border: 1px solid;
+  border-color: rgba(88,199,141,255);
+}
+''')

@@ -683,8 +683,8 @@ class HashcatRunner(QObject):
                             try:
                                 with open(f"{os.getcwd()}/data/history_of_cracked.txt", "a") as file:
                                     file.write(f"Password: {password}\n")
-                                    self.label_focus_output.setText(f"Password found: {password}")
-                                    self.label_focus_output.setStyleSheet("color: Red;")
+                                    main.label_focus_output.setText(f"Password found: {password}")
+                                    main.label_focus_output.setStyleSheet("color: Red;")
                             except Exception as e:
                                 #self.update_text.emit(f"Error: {str(e)}")
                                 print(f"Error: {str(e)}")
@@ -767,8 +767,8 @@ class HashcatRunner(QObject):
                     try:
                         with open(f"{os.getcwd()}/data/history_of_cracked.txt", "a") as file:
                             file.write(f"Password: {password}\n")
-                            self.label_focus_output.setText(f"Password found: {password}")
-                            self.label_focus_output.setStyleSheet("color: Red;")
+                            main.label_focus_output.setText(f"Password found: {password}")
+                            main.label_focus_output.setStyleSheet("color: Red;")
                     except Exception as e:
                         #self.update_text.emit(f"Error: {str(e)}")
                         print(f"Error: {str(e)}")
