@@ -1,3 +1,4 @@
+import re
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -39,7 +40,9 @@ class SendEmail():
             return str(e)
     
     def validate_email(self, email):
-        if '@' in email and '.' in email:
+        email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+        if re.search(email_pattern, email):
             return True
         else:
             return False
