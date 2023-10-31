@@ -22,7 +22,7 @@ class Main(QMainWindow):
         loadUi(f"{os.getcwd()}/assets/ui/mainWindow.ui", self)
          
         # every time the application is run, the wordlist is updated
-        # NordpassRequest.get_wordlist(self)
+        NordpassRequest.get_wordlist(self)
 
         # initialize Icon
         self.setWindowTitle("ISAN Security Gizmo Box v1.0")

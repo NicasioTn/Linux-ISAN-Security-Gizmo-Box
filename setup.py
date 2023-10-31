@@ -2,7 +2,6 @@ import subprocess
 import sys
 import os 
 
-# gizmorun = '/home/kali/Desktop/Linux-ISAN-Security-Gizmo-Box/GizmoBox.desktop'
 desktop = os.path.expanduser("~/Desktop")
 gizmorun = os.path.expanduser("~/Desktop/Linux-ISAN-Security-Gizmo-Box/GizmoBox.desktop")
 
@@ -42,3 +41,18 @@ subprocess.run(['cp', gizmorun, desktop])
 
 # set gio command to allow the GizmoBox.desktop file to be executable
 subprocess.run(['gio', 'set', gizmorun, 'metadata::trusted', 'yes'])
+
+# unzip Linux-ISAN-Security-Gizmo-Box/packets/Barlow.zip -d Linux-ISAN-Security-Gizmo-Box/packets/fonts
+subprocess.run(['unzip', dir_path + '/packets/Barlow.zip', '-d', dir_path + '/packets/fonts'])
+
+# Auto enter the password for the user from the sudo command
+password = b'kali\n'.decode('utf-8')
+
+try:
+    subprocess.run(['sudo', 'mv', dir_path + '/packets/fonts/*', '/usr/share/fonts'], input=password, check=True, universal_newlines=True)
+except subprocess.CalledProcessError as e:
+     print(f"Password is wrong: {e}")
+
+# update the font cache
+subprocess.run(['fc-cache', '-f', '-v'])
+
