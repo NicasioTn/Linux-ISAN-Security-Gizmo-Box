@@ -6,7 +6,7 @@ desktop = os.path.expanduser("~/Desktop")
 gizmorun = os.path.expanduser("~/Desktop/Linux-ISAN-Security-Gizmo-Box/GizmoBox.desktop")
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-print(dir_path)
+# print(dir_path)
 
 # pip install PyMuPDF pyqt6-tools PyQt6-Qt6 reportlab configparser requests qrcode
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PyMuPDF', 'pyqt6-tools', 'PyQt6-Qt6', 'reportlab', 'configparser', 'requests', 'qrcode'])
@@ -56,3 +56,8 @@ except subprocess.CalledProcessError as e:
 # update the font cache
 subprocess.run(['fc-cache', '-f', '-v'])
 
+# unzip Crackstation
+subprocess.run(['gunzip', dir_path + '/data/Wordlists/crackstation.txt.gz'])
+
+# cp rockyou.txt
+subprocess.run(['cp', '/usr/share/wordlists/rockyou.txt', dir_path + '/data/Wordlists/rockyou.txt'])
