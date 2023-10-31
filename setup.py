@@ -57,7 +57,7 @@ except subprocess.CalledProcessError as e:
 subprocess.run(['fc-cache', '-f', '-v'])
 
 # unzip Crackstation
-subprocess.run(['gunzip', dir_path + '/data/Wordlists/crackstation.txt.gz'])
+# subprocess.run(['gunzip', dir_path + '/data/Wordlists/crackstation.txt.gz'])
 
 # cp rockyou.txt
 subprocess.run(['cp', '/usr/share/wordlists/rockyou.txt', dir_path + '/data/Wordlists/rockyou.txt'])
