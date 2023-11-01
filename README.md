@@ -1,50 +1,36 @@
 # <img src="https://user-images.githubusercontent.com/55986701/249410092-db9276da-6a8d-4a29-ab05-fc24e58b9941.gif" width="40"/> ISAN Security Gizmo Box for Linux 
 <div id="header" align="center">
-  <img src="https://user-images.githubusercontent.com/55986701/275765601-6d3bbaca-9154-405f-9474-bf5aacc9c8ce.png" width="700"/>
+  <img src="https://user-images.githubusercontent.com/55986701/279823230-7a53ef1c-e4d3-4385-bdae-f280228ec190.png" width="700"/>
 </div>
 
 ## Description 👀📋
-ISAN Security Gizmo Box รวบรวมการตรวจสอบความมั่นคงปลอดภัยเบื้องต้นประกอบไปด้วย Password Evaluation, Malware Scanning, Vulnerability Scanning, HTTPS Testing และ Message Digest Generator ไว้ในเครื่องมือเดียวกันและอยู่ในรูปแบบ ของ Graphical User Interface (GUI) อีกทั้งยังอยู่ในรูปแบบ Virtual Machine (VM) Image ของ Hypervisor 2 ชนิด คือ Oracle VM VirtualBox และ VMware Workstation Player   <br>
+ISAN Security Gizmo Box เป็นเครื่องมือที่รวบรวมเครื่องมือเกี่ยวกับการตรวจสอบความมั่นคงปลอดภัยเบื้องต้นโดยแบ่งประเภทผู้ใช้งานงานออกเป็น 2 ประเภท ได้แก่ Advanced User ประกอบด้วยเครื่องมือ Password Evaluation, Malware Scanning, Message Digest Generator และ Network Engineer ประกอบด้วยเครื่องมือ Vulnerability Scanning, HTTPS Testing ไว้ในเครื่องมือเดียวกันและอยู่ในรูปแบบของ Graphical User Interface (GUI) ที่พัฒนาด้วย Qt Designer และเรียกใช้งานด้วยภาษา Python อีกทั้งยังนำเสนอในรูปแบบ Virtual Appliance ของ 2 Virtual Machines คือ Oracle VM VirtualBox และ VMware Workstation Player  <br>
 
-- [ ] What your application does ? <br>
-- [ ] Why you used the technologies you used ? <br>
-- [ ] Some of the challenges you faced and features you hope to implement in the future. <br>
-
-## Table of Contents 📃🔗
-* [Description](#description)<br>
-* [How to Install and Run the Project](#howtoInstallandRuntheProject)<br>
-* [How to Use the Project](#howtoUsetheProject)<br>
-* [Credits](#credits)<br>
-* [License](#license)<br>
-<!-- ...snip... -->    
-<a name="description"/>
-<a name="howtoInstallandRuntheProject"/>
-<a name="howtoUsetheProject"/>
-<a name="credits"/>
-<a name="license"/>
-
-## How to Prepare Packet for Install and Run The Project 📁🗂️
-### Qt Designer for Design Python GUI
-Download for Windows or Linux: https://www.python.org/downloads/release/python-31010/ 
-<br>
-### PyQt6 for developments with QT Designer
+## How to Install and Run The Project 📁🗂️
+### 1. Git clone Repo
 ```
-pip install PyQt6
+git clone https://github.com/NicasioTn/Linux-ISAN-Security-Gizmo-Box.git
 ```
-install Qt Designer GUI for Make GUI .ui
-Link: https://build-system.fman.io/qt-designer-download
-
-###  Misc 
+### 2. Setup Program
 ```
-pip install hashlib
-pip install qrcode
-pip install pyperclip
-pip install Reportlab
-pip install configparser
-pip install requests
+python3 ISAN-Security-Gizmo-Box/setup.py
 ```
-
-
 ## How to Use the Project🔌🤏🏼
+### Oracle Virtual Box
+<div id="header" align="center">
+  <p> file -> import appliance -> choose your location .ova </p>
+  <img src="https://user-images.githubusercontent.com/55986701/279824078-f51d1ea7-31d5-4fd3-b876-83580970e46f.png" width="700"/>
+  <p> start -> execute GizmoBox </p>
+  <img src="https://user-images.githubusercontent.com/55986701/279823946-8f79f0d1-2cab-48c1-95a3-0810e0063547.png" width="700"/>
+</div>
+
+### VMware Workstation
+<div id="header" align="center">
+  <p> file -> open -> choose your location .ovf </p>
+  <img src="https://user-images.githubusercontent.com/55986701/279824325-a20cbff7-f551-4b46-8d6d-44e386a951f0.png" width="700"/>
+  <p> start -> execute GizmoBox </p>
+  <img src="https://user-images.githubusercontent.com/55986701/279824240-b9b6c5bd-7be6-4a56-9b96-99eb02f8fcfb.png" width="700"/>
+</div>
+
 ## Credits
 ## License 📝🧑‍⚖️
