@@ -7,6 +7,11 @@
 ISAN Security Gizmo Box เป็นเครื่องมือที่รวบรวมเครื่องมือเกี่ยวกับการตรวจสอบความมั่นคงปลอดภัยเบื้องต้นโดยแบ่งประเภทผู้ใช้งานงานออกเป็น 2 ประเภท ได้แก่ Advanced User ประกอบด้วยเครื่องมือ Password Evaluation, Malware Scanning, Message Digest Generator และ Network Engineer ประกอบด้วยเครื่องมือ Vulnerability Scanning, HTTPS Testing ไว้ในเครื่องมือเดียวกันและอยู่ในรูปแบบของ Graphical User Interface (GUI) ที่พัฒนาด้วย Qt Designer และเรียกใช้งานด้วยภาษา Python อีกทั้งยังนำเสนอในรูปแบบ Virtual Appliance ของ 2 Virtual Machines คือ Oracle VM VirtualBox และ VMware Workstation Player  <br>
 
 ## How to Install and Run The Project 📁🗂️
+<div id="header" align="center">
+  <p>On desktop right click -> select open-terminal -> this path would be [~/Desktop] </p>
+  <img src="https://user-images.githubusercontent.com/55986701/279825981-fc10a060-e883-4d67-961a-5ed18b3d6e82.png" width="700"/>
+</div>
+
 ### 1. Git clone Repo 🚀
 ```
 git clone https://github.com/NicasioTn/Linux-ISAN-Security-Gizmo-Box.git
@@ -15,6 +20,10 @@ git clone https://github.com/NicasioTn/Linux-ISAN-Security-Gizmo-Box.git
 ```
 python3 ISAN-Security-Gizmo-Box/setup.py
 ```
+<div>
+  <p>❗If the install packet requires a password you should enter "kali" and press enter</p>
+</div>
+
 ## How to Use the Project🔌
 ### Oracle Virtual Box
 <div id="header" align="center">
