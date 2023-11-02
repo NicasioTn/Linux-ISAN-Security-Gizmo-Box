@@ -41,5 +41,14 @@ python3 ISAN-Security-Gizmo-Box/setup.py
   <img src="https://user-images.githubusercontent.com/55986701/279824240-b9b6c5bd-7be6-4a56-9b96-99eb02f8fcfb.png" width="700"/>
 </div>
 
-## Credits
+## Author
+* Kanjana Pinit (กาญจนา พินิจ)
+* Peeratach Butto (พีรธัช บุตรโท)
+* Faculty of Informatics (คณะวิทยาการสารสนเทศ)
+* Computer Science (สาขาวิทยาการคอมพิวเตอร์)
+* Mahasarakham University (มหาวิทยาลัยมหาสารคาม)
+
 ## License 📝🧑‍⚖️
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Copyright (c) 2023 NicasioTn <br>
+For more information, please visit the author's website: https://github.com/NicasioTn
