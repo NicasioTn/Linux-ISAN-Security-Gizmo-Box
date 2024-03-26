@@ -8,7 +8,7 @@ ISAN Security Gizmo Box เป็นเครื่องมือที่ร�
 
 ## How to Install and Run The Project 📁🗂️
 <div id="header" align="center">
-  <p>On desktop right click -> select open-terminal -> this path would be [~/Desktop] </p>
+  <p>On Desktop right click -> select open-terminal -> This path would be [~/Desktop] </p>
   <img src="https://user-images.githubusercontent.com/55986701/279825981-fc10a060-e883-4d67-961a-5ed18b3d6e82.png" width="700"/>
 </div>
 
@@ -18,10 +18,11 @@ git clone https://github.com/NicasioTn/Linux-ISAN-Security-Gizmo-Box.git
 ```
 ### 2. Setup Program 📦
 ```
-python3 ISAN-Security-Gizmo-Box/setup.py
+python3 Linux-ISAN-Security-Gizmo-Box/setup.py
 ```
 <div>
-  <p>❗If the install packet requires a password you should enter "kali" and press enter</p>
+  <p>❗If the install packet requires a password you should type "kali" on prompt and press enter</p>
+  <p>❗don't forget to check the linking path of the file in the source code [if the program is not running] </p>
 </div>
 
 ## How to Use the Project🔌
